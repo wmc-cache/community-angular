@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  color1 = "#fff"
+  color1 = "skyblue"
   backgroundColor1 = "#108ee9"
   handleClick1() {
     if (this.color1 === "") {
-      this.color1 = "#fff"
+      this.color1 = "skyblue"
       this.backgroundColor1 = "#108ee9"
 
     }
-    if (this.color2 === "#fff") {
+    if (this.color2 === "skyblue") {
       this.color2 = ""
       this.backgroundColor2 = ""
     }
@@ -23,10 +23,10 @@ export class AppComponent {
   backgroundColor2 = ""
   handleClick2() {
     if (this.color2 === "") {
-      this.color2 = "#fff"
+      this.color2 = "skyblue"
       this.backgroundColor2 = "#108ee9"
     }
-    if (this.color1 === "#fff") {
+    if (this.color1 === "skyblue") {
       this.color1 = ""
       this.backgroundColor1 = ""
     }

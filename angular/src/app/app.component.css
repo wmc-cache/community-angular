@@ -1,10 +1,13 @@
 .container {
+  position: fixed;
+  top: 0;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 3rem;
+  grid-template-rows: 3.3rem;
   grid-gap: 5px;
   grid-template-areas: ". title name1 name2 name3 input button . . . ";
-  background-color: #fff;
+  background-color: skyblue;
+
   place-content: stretch;
   place-items: stretch;
 }
@@ -27,12 +30,12 @@
 .name1:hover,
 .name2:hover,
 .name3:hover {
-  color: black;
+  color: snow;
 }
 .name2 {
   grid-area: name2;
   place-self: center;
-  color: darkgray;
+  color: #108ee9;
   cursor: pointer;
   white-space: nowrap;
   padding: 1rem;
@@ -40,7 +43,7 @@
 .name3 {
   grid-area: name3;
   place-self: center;
-  color: darkgray;
+  color: #108ee9;
   cursor: pointer;
   white-space: nowrap;
   padding: 1rem;

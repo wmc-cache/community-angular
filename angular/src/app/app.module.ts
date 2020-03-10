@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home'
 import { DiscoverModule } from './discover'
 import { ShareModule } from './shared'
+
 @NgModule({
   declarations: [
     AppComponent

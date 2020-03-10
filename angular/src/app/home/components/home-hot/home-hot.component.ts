@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-hot.component.css']
 })
 export class HomeHotComponent implements OnInit {
-  cards = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }]
+  cards = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 4 }, { id: 4 }, { id: 4 }, { id: 4 }, { id: 4 }, { id: 4 }]
   constructor() { }
 
   ngOnInit() {

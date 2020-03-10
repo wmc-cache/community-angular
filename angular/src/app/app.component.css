@@ -1,0 +1,81 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 3rem;
+  grid-gap: 5px;
+  grid-template-areas: ". title name1 name2 name3 input button . . . ";
+  background-color: #fff;
+  place-content: stretch;
+  place-items: stretch;
+}
+.title {
+  grid-area: title;
+  place-self: center;
+  color: #108ee9;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.name1 {
+  grid-area: name1;
+  place-self: center;
+  color: darkgray;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 1rem;
+}
+.name1:hover,
+.name2:hover,
+.name3:hover {
+  color: black;
+}
+.name2 {
+  grid-area: name2;
+  place-self: center;
+  color: darkgray;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 1rem;
+}
+.name3 {
+  grid-area: name3;
+  place-self: center;
+  color: darkgray;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 1rem;
+}
+input {
+  grid-area: input;
+  height: 1.5rem;
+  place-self: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid darkgray;
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+  background: #fff;
+  border-radius: 0.2rem;
+}
+button {
+  grid-area: button;
+  place-self: center;
+  display: block;
+  position: relative;
+  width: 5rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: #108ee9;
+  cursor: pointer;
+}

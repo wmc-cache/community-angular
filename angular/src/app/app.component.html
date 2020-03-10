@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="title">Community</div>
+  <a
+    [ngStyle]="{ color: color1, backgroundColor: backgroundColor1 }"
+    (click)="handleClick1()"
+    routerLink="/home"
+    class="name1"
+    routerLinkActive="active"
+    >首页</a
+  >
+
+  <a
+    [ngStyle]="{ color: color2, backgroundColor: backgroundColor2 }"
+    (click)="handleClick2()"
+    routerLink="/discover"
+    class="name2"
+    routerLinkActive="active"
+    >发现</a
+  >
+
+  <div class="name3">等你来答</div>
+  <input type="text" placeholder="搜索社区内容" />
+  <button>提问</button>
+</div>
+<router-outlet></router-outlet>

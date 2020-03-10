@@ -1,0 +1,27 @@
+<div class="container">
+  <a
+    [ngStyle]="{ color: color1 }"
+    (click)="handleClick1()"
+    routerLink="/home/recommend"
+    class="title1"
+    routerLinkActive="active"
+    >推荐</a
+  >
+  <a
+    [ngStyle]="{ color: color2 }"
+    (click)="handleClick2()"
+    routerLink="/home/recommend"
+    class="title2"
+    routerLinkActive="active"
+    >关注</a
+  >
+  <a
+    [ngStyle]="{ color: color3 }"
+    (click)="handleClick3()"
+    routerLink="/home/hot"
+    class="title3"
+    routerLinkActive="active"
+    >热榜</a
+  >
+</div>
+<router-outlet></router-outlet>

@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-
+import { faComments, faBell } from '@fortawesome/free-solid-svg-icons'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  comments = faComments
+  bell = faBell
   color1 = "skyblue"
   backgroundColor1 = "#108ee9"
   handleClick1() {

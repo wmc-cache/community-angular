@@ -2,10 +2,10 @@
   position: fixed;
   top: 0;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 3.3rem;
   grid-gap: 5px;
-  grid-template-areas: ". title name1 name2 name3 input button . . . ";
+  grid-template-areas: ". title name1 name2 name3 input button icon1 icon2  img ";
   background-color: skyblue;
 
   place-content: stretch;
@@ -81,4 +81,24 @@ button {
   user-select: none;
   background-color: #108ee9;
   cursor: pointer;
+}
+
+img {
+  grid-area: img;
+  place-self: center start;
+  border-radius: 5px;
+  width: 2rem;
+  height: 2rem;
+}
+.icon1 {
+  grid-area: icon1;
+  place-self: center;
+  color: #108ee9;
+  font-size: larger;
+}
+.icon2 {
+  grid-area: icon2;
+  place-self: center start;
+  color: #108ee9;
+  font-size: larger;
 }

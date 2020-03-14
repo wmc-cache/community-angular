@@ -7,7 +7,7 @@
   grid-gap: 5px;
   grid-template-areas: ". title name1 name2 name3 input button icon1 icon2  img ";
   background-color: skyblue;
-
+  width: 100%;
   place-content: stretch;
   place-items: stretch;
 }
@@ -89,16 +89,47 @@ img {
   border-radius: 5px;
   width: 2rem;
   height: 2rem;
+  cursor: pointer;
 }
 .icon1 {
   grid-area: icon1;
   place-self: center;
+  cursor: pointer;
   color: #108ee9;
   font-size: larger;
 }
 .icon2 {
   grid-area: icon2;
   place-self: center start;
+  cursor: pointer;
   color: #108ee9;
   font-size: larger;
+}
+
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+#dialog-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  background-color: #fff;
+  margin-left: -50%;
+  text-align: center;
+  box-shadow: 0px 0px 2px 1px black;
+  z-index: 3000;
+}
+#overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 2999;
+  opacity: 0;
 }

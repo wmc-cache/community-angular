@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home'
 import { DiscoverModule } from './discover'
-import { ShareModule } from './shared'
-
+import { ShareModule, DialogMyComponent } from './shared'
+import { DialogModule } from './dialog'
+import { MyModule } from './my'
 @NgModule({
   declarations: [
     AppComponent
@@ -16,9 +17,12 @@ import { ShareModule } from './shared'
     AppRoutingModule,
     HomeModule,
     DiscoverModule,
-    ShareModule
+    ShareModule,
+    DialogModule,
+    MyModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogMyComponent]
 })
 export class AppModule { }

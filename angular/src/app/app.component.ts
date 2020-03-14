@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { faComments, faBell } from '@fortawesome/free-solid-svg-icons'
+import { DialogMyComponent } from './shared';
+import { DialogService } from './dialog';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(private dialogService: DialogService) { }
   comments = faComments
   bell = faBell
   color1 = "skyblue"
   backgroundColor1 = "#108ee9"
+
   handleClick1() {
     if (this.color1 === "") {
       this.color1 = "skyblue"
@@ -32,5 +36,25 @@ export class AppComponent {
       this.color1 = ""
       this.backgroundColor1 = ""
     }
+  }
+
+
+
+
+  handleClick() {
+
+    this.dialogService.open(DialogMyComponent, {
+      inputs: {},
+      outputs: {},
+      position: {
+        top: `10%`,
+        left: '139%',
+        width: '8%',
+        height: `25%`
+      }
+    });
+  }
+  removeDialog() {
+    this.dialogService.close()
   }
 }

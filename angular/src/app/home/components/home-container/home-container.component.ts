@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class HomeContainerComponent {
   color1 = "darkgray"
   color2 = "darkgray"
-  color3 = "darkgray"
+  color3 = "#108ee9"
   handleClick1() {
     if (this.color1 === "darkgray") {
       this.color1 = "#108ee9"

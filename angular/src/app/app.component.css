@@ -2,10 +2,10 @@
   position: fixed;
   top: 0;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 3.3rem;
   grid-gap: 5px;
-  grid-template-areas: ". title name1 name2 name3 input button icon1 icon2  img ";
+  grid-template-areas: ". title name1 name2 name3 .  button icon1 icon2  img ";
   background-color: skyblue;
   width: 100%;
   place-content: stretch;
@@ -17,35 +17,41 @@
   color: #108ee9;
   font-size: 1.5rem;
   cursor: pointer;
+  min-width: 10rem;
 }
 
+.name1:hover,
+.name2:hover,
+.name3:hover {
+  color: snow;
+}
 .name1 {
   grid-area: name1;
   place-self: center;
   color: darkgray;
   cursor: pointer;
   white-space: nowrap;
+
   padding: 1rem;
 }
-.name1:hover,
-.name2:hover,
-.name3:hover {
-  color: snow;
-}
+
 .name2 {
   grid-area: name2;
   place-self: center;
   color: #108ee9;
   cursor: pointer;
   white-space: nowrap;
+
   padding: 1rem;
 }
+
 .name3 {
   grid-area: name3;
   place-self: center;
   color: #108ee9;
   cursor: pointer;
   white-space: nowrap;
+
   padding: 1rem;
 }
 input {
@@ -60,6 +66,7 @@ input {
   padding-left: 1.5rem;
   background: #fff;
   border-radius: 0.2rem;
+  min-width: 7rem;
 }
 button {
   grid-area: button;
@@ -132,4 +139,7 @@ img {
   background-color: #fff;
   z-index: 2999;
   opacity: 0;
+}
+active {
+  background-color: aqua;
 }

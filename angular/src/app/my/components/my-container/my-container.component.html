@@ -1,24 +1,28 @@
 <div class="page">
   <app-back-button></app-back-button>
-  <div class="container">
-    <img
-      src="../../../../assets/image/b0e2f0d0a1f5f70d9c78ba7f7c38f38e.png"
-      alt=""
-      class="back"
-    />
-    <img
-      src="../../../../assets/image/3031425f10b204f82f3cd6fbb9d06bce.jpg"
-      alt=""
-      class="avatar"
-    />
-    <div class="name">末世</div>
-    <div class="editImg"></div>
-    <div class="edit">编辑个人资料</div>
-  </div>
+  <ng-container *ngIf="my$ | async as my">
+    <div class="container">
+      <img
+        src="../../../../assets/image/e934f5c43a1f656cf42deaa3da325668.png"
+        alt=""
+        class="back"
+      />
+      <img [src]="my.avatar_url" alt="" class="avatar" />
+      <div class="name">{{ my.name }}</div>
+      <div class="editImg"></div>
+      <div class="edit">编辑个人资料</div>
+      <div class="headline">{{ my.headline }}</div>
+    </div>
+  </ng-container>
 
-  <div class="title">
-    我的动态
+  <div class="card">
+    <div class="title">
+      我的动态
+    </div>
 
-    <app-scrollable-tab></app-scrollable-tab>
+    <app-my-question
+      *ngFor="let card of cards$ | async"
+      [card]="card"
+    ></app-my-question>
   </div>
 </div>

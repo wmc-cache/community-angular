@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { faComments, faBell } from '@fortawesome/free-solid-svg-icons'
-import { DialogMyComponent } from './shared';
+import { DialogMyComponent, DialogQuestionComponent } from './share';
 import { DialogService } from './dialog';
 @Component({
   selector: 'app-root',
@@ -39,7 +39,20 @@ export class AppComponent {
   }
 
 
+  question() {
 
+    this.dialogService.open(DialogQuestionComponent, {
+      inputs: {},
+      outputs: {},
+
+      position: {
+        top: "20%",
+        left: '75%',
+        width: '50%',
+        height: "60%"
+      }
+    });
+  }
 
   handleClick() {
 

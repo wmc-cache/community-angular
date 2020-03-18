@@ -1,0 +1,42 @@
+.container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  grid-template-rows: 1rem 2rem 2rem 0.05rem;
+  grid-gap: 5px;
+  grid-template-areas:
+    "tip  tip  .   . "
+    "img title . . "
+    " .  content content  . ";
+  place-content: stretch;
+  place-items: stretch;
+  max-width: 35rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  border-bottom: 1px solid darkgray;
+}
+
+img {
+  grid-area: img;
+  place-self: center end;
+}
+.title {
+  grid-area: title;
+  place-self: center start;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.content {
+  grid-area: content;
+
+  font-size: 0.8rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tip {
+  grid-area: tip;
+  place-self: center;
+  color: #108ee9;
+}

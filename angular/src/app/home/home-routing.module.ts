@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HomeContainerComponent } from './components'
 import { HomeHotComponent } from './components'
 import { HomeRecommendComponent } from './components'
+import { HomeAttentionComponent } from './components'
 const routes: Routes = [
   {
     path: 'home', component: HomeContainerComponent,
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: "recommend",
         component: HomeRecommendComponent
+      },
+      {
+        path: "attention",
+        component: HomeAttentionComponent
       }
     ]
 

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row1">
+    <fa-icon class="icon1" [icon]="user"></fa-icon>
+
+    <a routerLink="/my" class="title" routerLinkActive="active"> 我的主页</a>
+  </div>
+  <div class="row2">
+    <fa-icon class="icon2" [icon]="userPlus"></fa-icon>
+    <div class="title">创作者中心</div>
+  </div>
+  <div class="row3">
+    <fa-icon class="icon3" [icon]="cog"></fa-icon>
+    <div class="title">设置</div>
+  </div>
+  <div class="row4">
+    <fa-icon class="icon4" [icon]="edit"></fa-icon>
+    <div (click)="navigate()" class="title">退出</div>
+  </div>
+</div>

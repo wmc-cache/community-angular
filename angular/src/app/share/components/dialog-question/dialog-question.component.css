@@ -1,0 +1,101 @@
+.push {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 4rem 6rem 6rem 2rem 2rem 2rem;
+  grid-gap: 5px;
+  grid-template-areas:
+    "img  name name name  "
+    "textarea textarea textarea  textarea "
+    "textarea textarea textarea textarea "
+    "img1  img2  img3  img4"
+    "title1 title2 title3 title4 "
+    ". button   button .";
+  place-content: stretch;
+  place-items: stretch;
+}
+
+img {
+  grid-area: img;
+  place-self: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.img1 {
+  grid-area: img1;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.img2 {
+  grid-area: img2;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.img3 {
+  grid-area: img3;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.img4 {
+  grid-area: img4;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.push .name {
+  grid-area: name;
+  place-self: center start;
+  font-weight: bold;
+  font-size: large;
+}
+
+.textarea {
+  grid-area: textarea;
+  font-size: larger;
+  background-color: skyblue;
+}
+
+.push .title1 {
+  grid-area: title1;
+  font-size: 0.7rem;
+  place-self: center;
+  color: darkgrey;
+}
+.push .title2 {
+  grid-area: title2;
+  font-size: 0.7rem;
+  place-self: center;
+  color: darkgrey;
+}
+.push .title3 {
+  grid-area: title3;
+  font-size: 0.7rem;
+  place-self: center;
+  color: darkgrey;
+}
+.push .title4 {
+  grid-area: title4;
+  font-size: 0.7rem;
+  place-self: center;
+  color: darkgrey;
+}
+
+button {
+  grid-area: button;
+  display: block;
+  position: relative;
+  width: 8rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #000000;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: darkgray;
+  color: #fff;
+}

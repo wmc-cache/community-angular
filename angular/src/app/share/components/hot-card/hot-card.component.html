@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="id">{{ card.id }}</div>
+  <div class="title">{{ card.title }}</div>
+  <div class="content" (click)="handleClick()">
+    {{ card.description }}
+  </div>
+  <img class="img" [src]="card.img" alt="" />
+  <div class="under"></div>
+  <fa-icon class="icon1" [icon]="fire"></fa-icon>
+  <div class="hot">{{ card.hot }}</div>
+  <fa-icon class="icon2" [icon]="share"></fa-icon>
+</div>

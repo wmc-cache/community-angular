@@ -5,9 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home'
 import { DiscoverModule } from './discover'
-import { ShareModule, DialogMyComponent } from './shared'
+import { ShareModule, DialogMyComponent, DialogQuestionComponent } from './share'
 import { DialogModule } from './dialog'
 import { MyModule } from './my'
+import { ParticularsModule } from './particulars'
+import { HttpClientModule } from "@angular/common/http";
+import { LoginModule } from './login'
 @NgModule({
   declarations: [
     AppComponent
@@ -19,10 +22,13 @@ import { MyModule } from './my'
     DiscoverModule,
     ShareModule,
     DialogModule,
-    MyModule
+    MyModule,
+    ParticularsModule,
+    HttpClientModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DialogMyComponent]
+  entryComponents: [DialogMyComponent, DialogQuestionComponent]
 })
 export class AppModule { }

@@ -1,0 +1,55 @@
+:host {
+  padding: 0;
+}
+
+.page {
+  margin: 4rem 7rem;
+}
+.container {
+  padding: 2.5rem;
+  margin: 0 auto;
+  max-width: 50rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 4rem 4rem 1rem 1rem;
+  grid-gap: 5px;
+  grid-template-areas:
+    "title title title title "
+    "  image image image image"
+    "image image image image"
+    "attention discuss browse .";
+
+  place-content: stretch;
+  place-items: stretch;
+  max-width: 40rem;
+}
+
+img {
+  grid-area: image;
+  width: 15rem;
+  height: 4rem;
+  border-radius: 4px;
+}
+.title {
+  grid-area: title;
+  font-size: 1rem;
+}
+
+.attention {
+  grid-area: attention;
+  font-size: 0.8rem;
+  color: #ccc;
+  white-space: nowrap;
+}
+.discuss {
+  grid-area: discuss;
+  font-size: 0.8rem;
+  color: #ccc;
+  white-space: nowrap;
+}
+.browse {
+  grid-area: browse;
+  font-size: 0.8rem;
+  color: #ccc;
+  white-space: nowrap;
+}

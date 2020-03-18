@@ -1,0 +1,142 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 12rem 3.3rem 3.3rem 2.3rem 2.3rem 2.3rem;
+  grid-gap: 5px;
+  grid-template-areas:
+    "img  img  img  img"
+    "title title title button"
+    "  . hot   .  button"
+    "span1  question1 question1  question1"
+    "span2  question2 question2  question2"
+    "span3  question3 question3  question3";
+  background-color: snow;
+  place-content: stretch;
+  place-items: stretch;
+
+  border-radius: 4px;
+}
+.img {
+  grid-area: img;
+  border-radius: 4px;
+}
+.title {
+  grid-area: title;
+  place-self: center;
+  font-weight: bolder;
+}
+
+.button {
+  grid-area: button;
+  place-self: center;
+  display: block;
+  width: 5rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-weight: bolder;
+  text-align: center;
+  color: #0084ff;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: rgba(0, 132, 255, 0.08);
+  cursor: pointer;
+}
+
+.hot {
+  grid-area: hot;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  place-self: start;
+  color: darkgray;
+}
+
+.span1 {
+  grid-area: span1;
+  font-size: 0.5rem;
+  place-self: center;
+  display: block;
+  width: 5rem;
+  margin: 0 auto;
+  padding: 0.2rem 0;
+  box-sizing: border-box;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #8590a6;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+.span2 {
+  grid-area: span2;
+  font-size: 0.5rem;
+  place-self: center;
+  display: block;
+  width: 5rem;
+  margin: 0 auto;
+  padding: 0.2rem 0;
+  box-sizing: border-box;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #8590a6;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+.span3 {
+  grid-area: span3;
+  font-size: 0.5rem;
+  place-self: center;
+  display: block;
+  width: 5rem;
+  margin: 0 auto;
+  padding: 0.2rem 0;
+  box-sizing: border-box;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #8590a6;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+
+.question1 {
+  grid-area: question1;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.question2 {
+  grid-area: question2;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.question3 {
+  grid-area: question3;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

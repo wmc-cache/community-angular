@@ -1,3 +1,7 @@
-<p>
-  discover-container works!
-</p>
+<div class="page">
+  <div class="title">热门话题</div>
+
+  <app-vertical-grid [itemWidth]="'20rem'" [itemHeight]="'0rem'">
+    <app-topic-card *ngFor="let item of items"></app-topic-card>
+  </app-vertical-grid>
+</div>

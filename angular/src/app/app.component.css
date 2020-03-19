@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 3.3rem;
   grid-gap: 5px;
-  grid-template-areas: ". title name1 name2 name3 .  button icon1 icon2  img ";
+  grid-template-areas: ". title name1 name2 name3 .  button icon1 icon2  name ";
   background-color: skyblue;
   width: 100%;
   place-content: stretch;
@@ -90,13 +90,12 @@ button {
   cursor: pointer;
 }
 
-img {
-  grid-area: img;
+.name {
+  grid-area: name;
   place-self: center start;
-  border-radius: 5px;
-  width: 2rem;
-  height: 2rem;
+  color: #108ee9;
   cursor: pointer;
+  white-space: nowrap;
 }
 .icon1 {
   grid-area: icon1;

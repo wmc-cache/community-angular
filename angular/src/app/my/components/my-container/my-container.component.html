@@ -1,19 +1,5 @@
 <div class="page">
   <app-back-button></app-back-button>
-  <ng-container *ngIf="my$ | async as my">
-    <div class="container">
-      <img
-        src="../../../../assets/image/e934f5c43a1f656cf42deaa3da325668.png"
-        alt=""
-        class="back"
-      />
-      <img [src]="my.avatar_url" alt="" class="avatar" />
-      <div class="name">{{ my.name }}</div>
-      <div class="editImg"></div>
-      <div class="edit">编辑个人资料</div>
-      <div class="headline">{{ my.headline }}</div>
-    </div>
-  </ng-container>
 
   <div class="card">
     <div class="title">

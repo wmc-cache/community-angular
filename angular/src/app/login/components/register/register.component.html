@@ -1,0 +1,30 @@
+<div class="page">
+  <div class="container">
+    <app-back-button></app-back-button>
+    <div class="title">register</div>
+    <input
+      value="value1"
+      placeholder="输入用户名"
+      [(ngModel)]="value1"
+      type="text"
+    />
+
+    <input
+      value="value2"
+      placeholder="输入密码"
+      [(ngModel)]="value2"
+      type="password"
+    />
+
+    <input
+      value="value3"
+      placeholder="再次输入密码"
+      [(ngModel)]="value3"
+      type="password"
+    />
+
+    <div class="message">{{ message }}</div>
+
+    <button (click)="handleClick()">注册</button>
+  </div>
+</div>

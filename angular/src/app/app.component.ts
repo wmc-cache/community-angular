@@ -1,16 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, SimpleChanges, DoCheck } from '@angular/core';
 import { faComments, faBell } from '@fortawesome/free-solid-svg-icons'
 import { DialogMyComponent, DialogQuestionComponent } from './share';
 import { DialogService } from './dialog';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { MyCard } from './my';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private dialogService: DialogService) { }
+export class AppComponent implements OnInit {
+
+  constructor(private cookies: CookieService, private router: Router, private dialogService: DialogService, private http: HttpClient, private route: ActivatedRoute) { }
   comments = faComments
   bell = faBell
+  my$: Observable<MyCard>
+  name = ""
+  time: number = 2 * 60 * 60 * 1000;
+  _id
+
   color1 = "skyblue"
   backgroundColor1 = "#108ee9"
 
@@ -24,6 +35,7 @@ export class AppComponent {
       this.color2 = ""
       this.backgroundColor2 = ""
     }
+
   }
   color2 = ""
   backgroundColor2 = ""
@@ -36,6 +48,7 @@ export class AppComponent {
       this.color1 = ""
       this.backgroundColor1 = ""
     }
+    this.router.navigate(['/discover'])
   }
 
 
@@ -69,5 +82,20 @@ export class AppComponent {
   }
   removeDialog() {
     this.dialogService.close()
+  }
+
+
+  ngOnInit() {
+
+
+
+    this._id = this.cookies.get("_id");
+    this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this._id}`)
+
+
+
+
+
+
   }
 }

@@ -12,9 +12,7 @@
   <a
     [ngStyle]="{ color: color2, backgroundColor: backgroundColor2 }"
     (click)="handleClick2()"
-    routerLink="/discover"
     class="name2"
-    routerLinkActive="active"
     >发现</a
   >
 
@@ -23,12 +21,11 @@
   <button (click)="question()">提问</button>
   <fa-icon class="icon1" [icon]="bell"></fa-icon>
   <fa-icon class="icon2" [icon]="comments"></fa-icon>
-  <img
-    (click)="handleClick()"
-    src="../assets/image/20200213122544611.jpg"
-    alt=""
-  />
+  <ng-container *ngIf="my$ | async as my">
+    <div class="name" (click)="handleClick()">{{ my.name }}</div>
+  </ng-container>
 </div>
+
 <router-outlet></router-outlet>
 
 <div id="overlay" class="hidden" (click)="removeDialog()"></div>

@@ -1,15 +1,12 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 12rem 3.3rem 3.3rem 2.3rem 2.3rem 2.3rem;
+  grid-template-rows: 12rem 3.3rem 3.3rem;
   grid-gap: 5px;
   grid-template-areas:
     "img  img  img  img"
     "title title title button"
-    "  . hot   .  button"
-    "span1  question1 question1  question1"
-    "span2  question2 question2  question2"
-    "span3  question3 question3  question3";
+    " introduction  introduction   .  button";
   background-color: snow;
   place-content: stretch;
   place-items: stretch;
@@ -47,12 +44,11 @@
   cursor: pointer;
 }
 
-.hot {
-  grid-area: hot;
+.introduction {
+  grid-area: introduction;
   font-size: 0.6rem;
   white-space: nowrap;
   place-self: start;
-  color: darkgray;
 }
 
 .span1 {

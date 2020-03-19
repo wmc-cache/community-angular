@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CookieService } from 'ngx-cookie-service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home'
@@ -27,7 +27,7 @@ import { LoginModule } from './login'
     HttpClientModule,
     LoginModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
   entryComponents: [DialogMyComponent, DialogQuestionComponent]
 })

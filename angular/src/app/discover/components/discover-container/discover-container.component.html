@@ -2,6 +2,9 @@
   <div class="title">热门话题</div>
 
   <app-vertical-grid [itemWidth]="'20rem'" [itemHeight]="'0rem'">
-    <app-topic-card *ngFor="let item of items"></app-topic-card>
+    <app-topic-card
+      *ngFor="let card of cards | async"
+      [card]="card"
+    ></app-topic-card>
   </app-vertical-grid>
 </div>

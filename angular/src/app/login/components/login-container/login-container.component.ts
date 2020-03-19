@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Location } from "@angular/common";
 @Component({
   selector: 'app-login-container',
   templateUrl: './login-container.component.html',
@@ -12,7 +13,7 @@ export class LoginContainerComponent {
   value1 = "吴梦成"
   value2 = "wmc"
   val
-  constructor(private cookies: CookieService, private http: HttpClient, private router: Router) { }
+  constructor(private location: Location, private cookies: CookieService, private http: HttpClient, private router: Router) { }
   data = {
 
     "name": "",
@@ -34,13 +35,17 @@ export class LoginContainerComponent {
       this.val = res
       let _id = this.val._id
       if (res) {
-        this.router.navigate(['/home/hot']);
         this.cookies.set("_id", _id, new Date(new Date().getTime() + this.time));
+
+        this.router.navigate(['/home/hot']);
+
+
 
 
       }
 
     })
+
 
   }
 

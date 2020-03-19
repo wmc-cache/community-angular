@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { MyCard } from './my';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Location } from "@angular/common";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +15,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private cookies: CookieService, private router: Router, private dialogService: DialogService, private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private location: Location, private cookies: CookieService, private router: Router, private dialogService: DialogService, private http: HttpClient, private route: ActivatedRoute) { }
   comments = faComments
   bell = faBell
   my$: Observable<MyCard>
@@ -82,6 +83,7 @@ export class AppComponent implements OnInit {
   }
   removeDialog() {
     this.dialogService.close()
+    location.reload();
   }
 
 

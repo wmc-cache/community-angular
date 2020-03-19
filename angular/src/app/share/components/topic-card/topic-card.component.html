@@ -1,11 +1,7 @@
 <div class="container">
-  <img
-    class="img"
-    src="../../../../assets/image/v2-04413f17c44333b6d70bb40dcd4bf311_hd.png"
-    alt=""
-  />
-  <div class="title"></div>
-  <div class="introduction"></div>
+  <img class="img" [src]="card.avatar_url" alt="" />
+  <div class="title">{{ card.name }}</div>
+  <div class="introduction">{{ card.introduction }}</div>
 
   <button class="button">关注话题</button>
 </div>

@@ -6,7 +6,7 @@
   grid-template-areas:
     "img  img  img  img"
     "title title title button"
-    " introduction  introduction   .  button";
+    " introduction  introduction introduction     button";
   background-color: snow;
   place-content: stretch;
   place-items: stretch;
@@ -46,9 +46,10 @@
 
 .introduction {
   grid-area: introduction;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
+  overflow: hidden;
   white-space: nowrap;
-  place-self: start;
+  text-overflow: ellipsis;
 }
 
 .span1 {

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MyQuestionCard } from 'src/app/share';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { async } from '@angular/core/testing';
+import { CookieService } from 'ngx-cookie-service';
+
 export interface MyCard {
   name: string,
   avatar_url: string,
@@ -15,14 +16,17 @@ export interface MyCard {
 })
 export class MyContainerComponent implements OnInit {
 
-  my$: Observable<MyCard>
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private cookies: CookieService, private http: HttpClient) { }
+  cards$: Observable<MyCard[]>
+  _id
+
+
 
   ngOnInit() {
-
-    this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/5e71ed676095f90cc049bc0c`)
-    console.log(this.my$)
+    this._id = this.cookies.get("_id");
+    this.cards$ = this.http.get<MyCard[]>(`http://101.37.119.148:3000/users/${this._id}/followingTopics`)
   }
 
 }

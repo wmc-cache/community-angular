@@ -19,8 +19,6 @@ export class AppComponent implements OnInit {
   comments = faComments
   bell = faBell
   my$: Observable<MyCard>
-  name = ""
-  time: number = 2 * 60 * 60 * 1000;
   _id
 
   color1 = "skyblue"
@@ -88,16 +86,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-
-
-
     this._id = this.cookies.get("_id");
     this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this._id}`)
-
-
-
-
-
-
   }
 }

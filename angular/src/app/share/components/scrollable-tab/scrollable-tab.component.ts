@@ -16,7 +16,7 @@ export class ScrollableTabComponent {
   @Input() titleColor = "";
   @Input() titleActiveColor = "#108ee9";
   @Input() underColor = "#108ee9";
-  @Input() margin = "0";
+  @Input() margin = "";
   @Output() tabselected = new EventEmitter();
 
   handselect(index) {

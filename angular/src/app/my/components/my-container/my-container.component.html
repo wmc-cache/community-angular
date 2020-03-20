@@ -3,12 +3,14 @@
 
   <div class="card">
     <div class="title">
-      我的动态
+      我的主页
     </div>
 
-    <app-my-question
-      *ngFor="let card of cards$ | async"
-      [card]="card"
-    ></app-my-question>
+    <div class="container">
+      <app-my-topic
+        *ngFor="let card of cards$ | async"
+        [card]="card"
+      ></app-my-topic>
+    </div>
   </div>
 </div>

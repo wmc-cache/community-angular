@@ -34,9 +34,10 @@ export class LoginContainerComponent {
     this.http.post(url, this.data, headerOption).subscribe((res) => {
       this.val = res
       let _id = this.val._id
+      let token = this.val.token
       if (res) {
         this.cookies.set("_id", _id, new Date(new Date().getTime() + this.time));
-
+        this.cookies.set("token", token, new Date(new Date().getTime() + this.time));
         this.router.navigate(['/home/hot']);
 
 

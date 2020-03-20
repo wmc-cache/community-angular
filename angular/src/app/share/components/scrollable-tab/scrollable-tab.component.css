@@ -1,6 +1,6 @@
 ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 li {
@@ -16,7 +16,7 @@ li:hover {
 }
 
 .under {
-  width: 2.5rem;
+  width: 2.2rem;
   height: 2px;
   margin-top: 2px;
 }

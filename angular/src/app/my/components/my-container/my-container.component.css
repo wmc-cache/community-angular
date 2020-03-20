@@ -10,62 +10,14 @@
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 9rem 9rem 2rem 2rem;
-  margin: 2rem 7rem;
-  grid-template-areas:
-    "back back back  back"
-    "back back back back"
-    "avatar name     .  ."
-    "avatar  headline  .  edit";
-  place-content: stretch;
-  place-items: stretch;
-  background-color: #fafafa;
-}
-.back {
-  grid-area: back;
-  margin: 2rem;
-  border: 1px solid #fff;
-  border-radius: 4px;
-  object-fit: cover;
-}
-.avatar {
-  grid-area: avatar;
-  width: 7rem;
-  height: 7rem;
-  place-self: end center;
-  border: 1px solid #fff;
-  border-radius: 4px;
-}
-.name {
-  grid-area: name;
-  white-space: nowrap;
-  place-self: center start;
-}
-.edit {
-  grid-area: edit;
-  place-self: center;
-  padding: 0.2rem;
-  border-radius: 4px;
-  color: skyblue;
-  cursor: pointer;
-  border: 1px solid skyblue;
-  white-space: nowrap;
+  max-width: 50rem;
+  margin: 0 auto;
 }
 
 .title {
   text-align: center;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: bolder;
   color: #108ee9;
-  border-bottom: 1px solid darkgray;
-}
-.card {
-  max-width: 40rem;
-  background-color: #fafafa;
-  margin-left: 8rem;
-}
-.headline {
-  grid-area: headline;
-  color: darkgrey;
-  white-space: nowrap;
 }

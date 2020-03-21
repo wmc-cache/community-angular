@@ -1,4 +1,4 @@
-<ul [ngStyle]="{ 'background-color': backgroundColor }">
+<ul>
   <li *ngFor="let menu of menus; let i = index" [ngStyle]="{ margin: margin }">
     <a
       (click)="handselect(i)"
@@ -8,7 +8,7 @@
 
     <span
       class="under"
-      *ngIf="i === selectindex"
+      *ngIf="menu.link === selectLink"
       [ngStyle]="{ 'background-color': underColor }"
     >
     </span>

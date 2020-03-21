@@ -1,20 +1,8 @@
 <div class="page">
   <app-back-button></app-back-button>
-
-  <div class="card">
-    <div class="title">
-      我的主页
-    </div>
-    <div class="container2"></div>
-    <div class="title2">我提出的问题</div>
-    <div class="container3">
-      <div class="title3">
-        我关注的话题
-      </div>
-      <app-my-topic
-        *ngFor="let card of cards$ | async"
-        [card]="card"
-      ></app-my-topic>
-    </div>
-  </div>
+  <app-scrollable-tab
+    [menus]="cards"
+    (tabselected)="link($event)"
+  ></app-scrollable-tab>
+  <router-outlet></router-outlet>
 </div>

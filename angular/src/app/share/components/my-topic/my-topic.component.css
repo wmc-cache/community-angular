@@ -2,21 +2,19 @@
   display: flex;
   border: 1px solid darkgray;
   background-color: snow;
-  width: 25rem;
 }
 .content {
   display: flex;
   flex-direction: column;
-  width: 15rem;
 }
 img {
-  width: 8rem;
-  height: 8rem;
   border-radius: 4px;
   border: 1px solid darkgray;
+  width: 10rem;
+  height: 10rem;
 }
 .title {
-  margin: 1rem;
+  margin: auto;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -27,7 +25,7 @@ button {
   display: block;
   height: 2.5rem;
   width: 5rem;
-  margin: 1rem auto;
+  margin: auto;
   padding: 0.5rem 0;
   box-sizing: border-box;
   border: 1px solid #ccc;

@@ -1,22 +1,9 @@
 <div class="container">
   <div class="title">Community</div>
-  <a
-    [ngStyle]="{ color: color1, backgroundColor: backgroundColor1 }"
-    (click)="handleClick1()"
-    routerLink="/home"
-    class="name1"
-    routerLinkActive="active"
-    >首页</a
-  >
-
-  <a
-    [ngStyle]="{ color: color2, backgroundColor: backgroundColor2 }"
-    (click)="handleClick2()"
-    class="name2"
-    >发现</a
-  >
-
-  <a class="name3">等你来答</a>
+  <app-scrollable-tab
+    [selectLink]="selectLink"
+    (tabselected)="link($event)"
+  ></app-scrollable-tab>
 
   <button (click)="question()">提问</button>
   <fa-icon class="icon1" [icon]="bell"></fa-icon>

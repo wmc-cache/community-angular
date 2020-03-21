@@ -38,8 +38,8 @@ export class LoginContainerComponent {
       if (res) {
         this.cookies.set("_id", _id, new Date(new Date().getTime() + this.time));
         this.cookies.set("token", token, new Date(new Date().getTime() + this.time));
-        this.router.navigate(['/home/hot']);
-
+        this.router.navigate(['/home']);
+        setTimeout(() => { location.reload() }, 1)
 
 
 

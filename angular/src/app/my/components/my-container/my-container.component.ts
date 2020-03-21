@@ -1,32 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { MyQuestionCard } from 'src/app/share';
+import { MyQuestionCard, TopMenu } from 'src/app/share';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
-export interface MyCard {
-  name: string,
-  avatar_url: string,
-  headline: string
-}
+
 @Component({
   selector: 'app-my-container',
   templateUrl: './my-container.component.html',
   styleUrls: ['./my-container.component.css']
 })
-export class MyContainerComponent implements OnInit {
+export class MyContainerComponent {
+
+  cards: TopMenu[] = [{ id: 1, title: "问题", link: "" }, { id: 2, title: "回答", link: "" }, { id: 3, title: "话题", link: "my/topic" }];
+
+  constructor(private router: Router) { }
 
 
 
-  constructor(private cookies: CookieService, private http: HttpClient) { }
-  cards$: Observable<MyCard[]>
-  _id
+  link(menu) {
+    this.router.navigate([menu.link])
 
-
-
-  ngOnInit() {
-    this._id = this.cookies.get("_id");
-    this.cards$ = this.http.get<MyCard[]>(`http://101.37.119.148:3000/users/${this._id}/followingTopics`)
   }
+
+
 
 }

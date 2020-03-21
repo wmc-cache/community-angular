@@ -21,33 +21,11 @@ export class AppComponent implements OnInit {
   my$: Observable<MyCard>
   _id
 
-  color1 = "skyblue"
-  backgroundColor1 = "#108ee9"
+  selectLink
 
-  handleClick1() {
-    if (this.color1 === "") {
-      this.color1 = "skyblue"
-      this.backgroundColor1 = "#108ee9"
+  link(menu) {
+    this.router.navigate([menu.link])
 
-    }
-    if (this.color2 === "skyblue") {
-      this.color2 = ""
-      this.backgroundColor2 = ""
-    }
-
-  }
-  color2 = ""
-  backgroundColor2 = ""
-  handleClick2() {
-    if (this.color2 === "") {
-      this.color2 = "skyblue"
-      this.backgroundColor2 = "#108ee9"
-    }
-    if (this.color1 === "skyblue") {
-      this.color1 = ""
-      this.backgroundColor1 = ""
-    }
-    this.router.navigate(['/discover'])
   }
 
 
@@ -86,6 +64,8 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
+
+
     this._id = this.cookies.get("_id");
     this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this._id}`)
   }

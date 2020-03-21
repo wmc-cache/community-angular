@@ -10,17 +10,18 @@ export interface TopMenu {
   styleUrls: ["./scrollable-tab.component.css"]
 })
 export class ScrollableTabComponent {
-  selectindex = 0;
-  @Input() menus: TopMenu[] = [{ id: 1, title: "提问", link: "" }, { id: 2, title: "回答", link: "" }, { id: 3, title: "文章", link: "" }, { id: 4, title: "专栏", link: "" }, { id: 5, title: "想法", link: "" }];
-  @Input() backgroundColor = "skyblue ";
+
+  @Input() menus: TopMenu[] = [{ id: 1, title: "首页", link: "home" }, { id: 2, title: "发现", link: "discover" }, { id: 3, title: "回答", link: "" }];
+  @Input() selectLink: string
   @Input() titleColor = "";
   @Input() titleActiveColor = "#108ee9";
   @Input() underColor = "#108ee9";
-  @Input() margin = "";
+  @Input() margin = "0.5rem  2.5rem";
+
   @Output() tabselected = new EventEmitter();
 
   handselect(index) {
-    this.selectindex = index;
-    this.tabselected.emit(this.menus[this.selectindex]);
+
+    this.tabselected.emit(this.menus[index]);
   }
 }

@@ -1,10 +1,25 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { MyContainerComponent } from './components'
+import { MyContainerComponent, TopicComponent } from './components'
 
 
 const routes: Routes = [
-  { path: 'my', component: MyContainerComponent },
+  {
+    path: 'my', component: MyContainerComponent,
+
+
+
+    children: [
+      { path: "", redirectTo: "topic", pathMatch: "full" },
+      {
+        path: "topic",
+        component: TopicComponent
+
+      }
+
+    ]
+  },
+
 
 ];
 

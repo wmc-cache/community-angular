@@ -1,5 +1,7 @@
 <div class="container">
   <img [src]="card.avatar_url" alt="" />
-  <div class="title">{{ card.name }}</div>
-  <button (click)="handleClick()">取消关注</button>
+  <div class="content">
+    <div class="title">{{ card.name }}</div>
+    <button (click)="handleClick()">取消关注</button>
+  </div>
 </div>

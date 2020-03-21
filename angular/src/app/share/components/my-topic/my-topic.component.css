@@ -2,6 +2,12 @@
   display: flex;
   border: 1px solid darkgray;
   background-color: snow;
+  width: 25rem;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
 }
 img {
   width: 8rem;
@@ -10,12 +16,18 @@ img {
   border: 1px solid darkgray;
 }
 .title {
-  margin: 3rem;
+  margin: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #108ee9;
+  font-size: 1rem;
 }
 button {
   display: block;
+  height: 2.5rem;
   width: 5rem;
-  margin: 2.5rem auto;
+  margin: 1rem auto;
   padding: 0.5rem 0;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -29,5 +41,4 @@ button {
   user-select: none;
   background-color: #108ee9;
   cursor: pointer;
-  height: 2.8rem;
 }

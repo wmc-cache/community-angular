@@ -1,27 +1,23 @@
 .container {
   display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr;
-  grid-template-rows: 1rem 2rem 2rem 0.05rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2rem 2rem;
   grid-gap: 5px;
   grid-template-areas:
-    "tip  tip  .   . "
-    "img title . . "
-    " .  content content  . ";
+    "title . "
+    "  content content  ";
   place-content: stretch;
   place-items: stretch;
-  max-width: 35rem;
-  margin-top: 2rem;
-  margin-left: 2rem;
-  border-bottom: 1px solid darkgray;
+  max-width: 55rem;
+  border: 1px solid darkgray;
+  border-radius: 4px;
 }
 
-img {
-  grid-area: img;
-  place-self: center end;
-}
 .title {
   grid-area: title;
   place-self: center start;
+  color: #108ee9;
+  font-weight: bolder;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -33,10 +29,4 @@ img {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.tip {
-  grid-area: tip;
-  place-self: center;
-  color: #108ee9;
 }

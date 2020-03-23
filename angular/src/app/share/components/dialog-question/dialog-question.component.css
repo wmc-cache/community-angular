@@ -20,33 +20,39 @@ img {
   place-self: center;
   width: 1.5rem;
   height: 1.5rem;
+  user-select: none;
 }
 
 .img1 {
   grid-area: img1;
   width: 1.5rem;
   height: 1.5rem;
+  user-select: none;
 }
 .img2 {
   grid-area: img2;
   width: 1.5rem;
   height: 1.5rem;
+  user-select: none;
 }
 .img3 {
   grid-area: img3;
   width: 1.5rem;
   height: 1.5rem;
+  user-select: none;
 }
 .img4 {
   grid-area: img4;
   width: 1.5rem;
   height: 1.5rem;
+  user-select: none;
 }
 .push .name {
   grid-area: name;
   place-self: center start;
   font-weight: bold;
   font-size: large;
+  user-select: none;
 }
 
 .textarea {
@@ -60,24 +66,28 @@ img {
   font-size: 0.7rem;
   place-self: center;
   color: darkgrey;
+  user-select: none;
 }
 .push .title2 {
   grid-area: title2;
   font-size: 0.7rem;
   place-self: center;
   color: darkgrey;
+  user-select: none;
 }
 .push .title3 {
   grid-area: title3;
   font-size: 0.7rem;
   place-self: center;
   color: darkgrey;
+  user-select: none;
 }
 .push .title4 {
   grid-area: title4;
   font-size: 0.7rem;
   place-self: center;
   color: darkgrey;
+  user-select: none;
 }
 input {
   grid-area: input;
@@ -97,7 +107,6 @@ input {
 button {
   grid-area: button;
   display: block;
-  position: relative;
   width: 8rem;
   margin: 0 auto;
   padding: 0.5rem 0;
@@ -111,6 +120,7 @@ button {
   white-space: nowrap;
   text-overflow: ellipsis;
   user-select: none;
-  background-color: darkgray;
+  cursor: pointer;
+  background-color: #108ee9;
   color: #fff;
 }

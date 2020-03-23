@@ -1,0 +1,11 @@
+.container {
+  width: 55rem;
+  margin: 2rem auto;
+}
+.title {
+  text-align: center;
+  font-size: larger;
+  color: #108ee9;
+  background-color: skyblue;
+  width: 100%;
+}

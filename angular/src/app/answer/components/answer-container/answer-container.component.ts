@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { answerCard } from '../answer-card';
+import { QuestionCard } from '../answer-card';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -9,11 +9,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./answer-container.component.css']
 })
 export class AnswerContainerComponent implements OnInit {
-  cards$: Observable<answerCard[]>
+  cards$: Observable<QuestionCard[]>
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.cards$ = this.http.get<answerCard[]>(`http://101.37.119.148:3000/questions`)
+    this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/questions`)
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-answer',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./answer.component.css']
 })
 export class AnswerComponent implements OnInit {
-
+  @Input() card
   constructor() { }
 
   ngOnInit() {

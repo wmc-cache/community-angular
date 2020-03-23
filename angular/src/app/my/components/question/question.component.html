@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="title">我提出的问题</div>
+  <app-my-question
+    *ngFor="let card of cards$ | async"
+    [card]="card"
+  ></app-my-question>
+</div>

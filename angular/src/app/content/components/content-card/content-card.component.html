@@ -1,0 +1,9 @@
+<div class="container">
+  <ng-container *ngIf="card as card">
+    <img [src]="card.avatar_url" alt="" />
+    <div class="content">
+      <div class="title">{{ card.name }}</div>
+      <div class="introduction">{{ card.introduction }}</div>
+    </div>
+  </ng-container>
+</div>

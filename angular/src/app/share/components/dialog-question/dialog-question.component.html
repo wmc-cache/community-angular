@@ -4,7 +4,14 @@
     alt=""
   />
   <div class="name">今天是你加入社区的588天</div>
-  <textarea class="textarea" name="content" [(ngModel)]="content"></textarea>
+  <input
+    class="input"
+    placeholder="一句话描述你的问题"
+    value="value"
+    [(ngModel)]="value"
+    type="text"
+  />
+  <textarea class="textarea" name="content" [(ngModel)]="content"> </textarea>
   <button (click)="handleClick()">提问题</button>
   <img class="img1" src="../../../../assets/push/instruction.png" alt="" />
   <img class="img2" src="../../../../assets/push/conversation.png" alt="" />

@@ -16,6 +16,7 @@
 .img {
   grid-area: img;
   border-radius: 4px;
+  cursor: pointer;
 }
 .title {
   grid-area: title;

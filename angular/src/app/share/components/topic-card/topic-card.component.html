@@ -1,5 +1,5 @@
 <div class="container">
-  <img class="img" [src]="card.avatar_url" alt="" />
+  <img (click)="link()" class="img" [src]="card.avatar_url" alt="" />
   <div class="title">{{ card.name }}</div>
   <div class="introduction">{{ card.introduction }}</div>
 

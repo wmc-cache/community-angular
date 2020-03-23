@@ -1,0 +1,11 @@
+.container {
+  width: 50rem;
+  margin: 5rem auto;
+}
+.title {
+  text-align: center;
+  color: #108ee9;
+  font-weight: bolder;
+  font-size: 2rem;
+  border-bottom: 1px solid darkgrey;
+}

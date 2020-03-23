@@ -1,0 +1,10 @@
+<div class="container">
+  <ng-container *ngIf="name$ | async as name">
+    <div class="questioner">{{ name.name }}</div>
+  </ng-container>
+
+  <div class="title">{{ card.title }}</div>
+  <div class="description">{{ card.description }}</div>
+
+  <div class="at">{{ card.createdAt | date: "yyyy-MM-dd HH:mm:ss" }}</div>
+</div>

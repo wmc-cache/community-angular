@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="title">等你来答</div>
+  <ng-container *ngIf="cards$ | async as cards">
+    <app-answer-card
+      *ngFor="let card of cards.reverse()"
+      [card]="card"
+    ></app-answer-card>
+  </ng-container>
+</div>

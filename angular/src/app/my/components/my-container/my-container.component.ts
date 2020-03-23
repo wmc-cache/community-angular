@@ -13,9 +13,9 @@ import { Router } from '@angular/router';
 })
 export class MyContainerComponent {
 
-  cards: TopMenu[] = [{ id: 1, title: "问题", link: "" }, { id: 2, title: "回答", link: "" }, { id: 3, title: "话题", link: "my/topic" }];
+  cards: TopMenu[] = [{ id: 1, title: "问题", link: "my/answer" }, { id: 2, title: "回答", link: "" }, { id: 3, title: "话题", link: "my/topic" }];
 
-  constructor(private router: Router) { }
+  constructor(private cookies: CookieService, private router: Router) { }
 
 
 
@@ -23,7 +23,9 @@ export class MyContainerComponent {
     this.router.navigate([menu.link])
 
   }
-
+  handleClick() {
+    this.cookies.deleteAll("/my")
+  }
 
 
 }

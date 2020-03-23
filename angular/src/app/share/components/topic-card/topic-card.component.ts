@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 export interface TopicCard {
   name: string,
   avatar_url: string,
@@ -14,12 +15,16 @@ export interface TopicCard {
 })
 export class TopicCardComponent implements OnInit {
   @Input() card: TopicCard
-  constructor(private cookies: CookieService, private http: HttpClient) { }
+  constructor(private cookies: CookieService, private http: HttpClient, private router: Router) { }
   token
 
   ngOnInit() {
 
 
+  }
+
+  link() {
+    this.router.navigate(["/content"], { queryParams: { _id: `${this.card._id}` } })
   }
 
   handleClick() {

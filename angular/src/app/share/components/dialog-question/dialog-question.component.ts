@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-dialog-question',
@@ -7,44 +8,29 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./dialog-question.component.css']
 })
 export class DialogQuestionComponent {
-  constructor(private http: HttpClient) { }
-  // data = {
-
-  //   "name": "吴梦成",
-  //   "password": "wmc"
-
-  // }
-
-
-  // handleClick() {
-
-
-  //   let url = 'http://localhost:3000/users/login'
-  //   let headerOption = { headers: new HttpHeaders({ "Content-Type": 'application/json' }) }
-  //   this.http.post(url, this.data, headerOption).subscribe((res) => {
-  //     console.log("POST请求：", res)
-
-
-  //   })
-  // }
-
-
+  constructor(private cookies: CookieService, private http: HttpClient) { }
+  value = '';
+  content = '';
+  token
   data = {
 
-    "title": "吴梦成",
+    "title": "",
     "description": "",
-    "img": "http://localhost:3000/uploads/upload_1c3e8e5151d571978aa1ddea655aebbb.jpg",
+
+
 
   }
-  content = '';
+
 
   handleClick() {
+    this.data.title = this.value
     this.data.description = this.content
-
-    let url = 'http://localhost:3000/myQuestions'
-    let headerOption = { headers: new HttpHeaders({ "Content-Type": 'application/json' }) }
+    let url = 'http://101.37.119.148:3000/questions'
+    this.token = this.cookies.get("token");
+    let headerOption = { headers: new HttpHeaders({ "Content-Type": 'application/json', "Authorization": `bearer ${this.token}` }) }
     this.http.post(url, this.data, headerOption).subscribe((res) => {
       console.log("POST请求：", res)
+      this.value = ""
       this.content = ""
 
     })

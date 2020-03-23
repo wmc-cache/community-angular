@@ -24,11 +24,8 @@ export class LoginContainerComponent {
 
 
   handleClick() {
-
     let name = this.data.name = this.value1
     this.data.password = this.value2
-
-
     let url = 'http://101.37.119.148:3000/users/login'
     let headerOption = { headers: new HttpHeaders({ "Content-Type": 'application/json' }) }
     this.http.post(url, this.data, headerOption).subscribe((res) => {
@@ -36,8 +33,9 @@ export class LoginContainerComponent {
       let _id = this.val._id
       let token = this.val.token
       if (res) {
-        this.cookies.set("_id", _id, new Date(new Date().getTime() + this.time));
-        this.cookies.set("token", token, new Date(new Date().getTime() + this.time));
+        this.cookies.set("_id", _id, new Date(new Date().getTime() + this.time), "./");
+        this.cookies.set("token", token, new Date(new Date().getTime() + this.time), "./");
+
         this.router.navigate(['/home']);
         setTimeout(() => { location.reload() }, 1)
 

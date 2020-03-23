@@ -1,10 +1,11 @@
 .push {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 4rem 6rem 6rem 2rem 2rem 2rem;
+  grid-template-rows: 4rem 2rem 6rem 6rem 2rem 2rem 2rem;
   grid-gap: 5px;
   grid-template-areas:
     "img  name name name  "
+    " input input input input "
     "textarea textarea textarea  textarea "
     "textarea textarea textarea textarea "
     "img1  img2  img3  img4"
@@ -77,6 +78,20 @@ img {
   font-size: 0.7rem;
   place-self: center;
   color: darkgrey;
+}
+input {
+  grid-area: input;
+  height: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid darkgray;
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  width: 25rem;
+  margin: 0 auto;
 }
 
 button {

@@ -19,7 +19,6 @@ export class MyTopicComponent {
   constructor(private location: Location, private cookies: CookieService, private http: HttpClient) { }
   handleClick() {
     this.token = this.cookies.get("token");
-    console.log(this.token)
     let url = `http://101.37.119.148:3000/users/followingTopics/${this.card._id}`
     let headerOption = { headers: new HttpHeaders({ "Content-Type": 'application/json', "Authorization": `bearer ${this.token}` }) }
     this.http.delete(url, headerOption).subscribe(res => { console.log(res) })

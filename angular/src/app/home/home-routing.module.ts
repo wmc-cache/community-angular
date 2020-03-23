@@ -7,25 +7,6 @@ import { HomeAttentionComponent } from './components'
 const routes: Routes = [
   {
     path: 'home', component: HomeContainerComponent,
-
-
-    // children: [
-    //   { path: "", redirectTo: "hot", pathMatch: "full" },
-    //   {
-    //     path: "hot",
-    //     component: HomeHotComponent
-
-    //   },
-    //   {
-    //     path: "recommend",
-    //     component: HomeRecommendComponent
-    //   },
-    //   {
-    //     path: "attention",
-    //     component: HomeAttentionComponent
-    //   }
-    // ]
-
   },
 
 ];

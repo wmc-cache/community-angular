@@ -17,8 +17,10 @@ export class DialogMyComponent implements OnInit {
   constructor(private cookies: CookieService, private router: Router) { }
 
   navigate() {
-    this.cookies.delete("_id")
+
     this.router.navigate(['/login']);
+
+    setTimeout(() => { this.cookies.deleteAll() }, 500)
 
 
   }

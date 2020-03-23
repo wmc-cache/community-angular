@@ -11,6 +11,8 @@ import { MyModule } from './my'
 import { ParticularsModule } from './particulars'
 import { HttpClientModule } from "@angular/common/http";
 import { LoginModule } from './login'
+import { ContentModule } from './content'
+import { AnswerModule } from './answer'
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +27,9 @@ import { LoginModule } from './login'
     MyModule,
     ParticularsModule,
     HttpClientModule,
-    LoginModule
+    LoginModule,
+    ContentModule,
+    AnswerModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],

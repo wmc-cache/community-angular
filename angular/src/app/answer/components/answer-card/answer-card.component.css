@@ -1,0 +1,48 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 4rem 4rem;
+  grid-gap: 5px;
+  grid-template-areas:
+    "questioner  title . . "
+    ". description .  at   ";
+
+  width: 100%;
+  place-content: stretch;
+  place-items: stretch;
+  border: 1px solid darkgrey;
+}
+
+.questioner {
+  grid-area: questioner;
+  color: #108ee9;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  place-self: center;
+}
+
+.title {
+  grid-area: title;
+  color: #108ee9;
+  font-weight: bolder;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  place-self: center start;
+}
+.description {
+  grid-area: description;
+  font-size: 0.8rem;
+  margin: 0.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  place-self: center;
+}
+.at {
+  grid-area: at;
+  place-self: center;
+  font-size: 0.5rem;
+  color: darkgray;
+}

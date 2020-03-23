@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  width: 40rem;
+  margin: 5rem auto;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
+img {
+  width: 10rem;
+  height: 6rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.title {
+  color: #108ee9;
+}

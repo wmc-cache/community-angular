@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
   }
   removeDialog() {
     this.dialogService.close()
-    location.reload();
+
   }
 
 

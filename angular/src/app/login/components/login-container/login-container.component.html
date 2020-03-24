@@ -1,11 +1,67 @@
 <div class="page">
   <div class="container">
-    <div (click)="navigate()" class="add">注册</div>
-    <div class="title">community</div>
-    <input value="value1" [(ngModel)]="value1" type="text" />
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <h1>community</h1>
+      <label for="name" class="label1">用户名</label>
+      <input
+        type="text"
+        class="input1"
+        id="name"
+        required
+        [(ngModel)]="model.name"
+        name="name"
+        #name="ngModel"
+        minlength="2"
+      />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="danger1">
+        <div *ngIf="name.errors.required">
+          用户名不能为空
+        </div>
+        <div *ngIf="name.errors.minlength">
+          用户名太短
+        </div>
+      </div>
 
-    <input value="value2" [(ngModel)]="value2" type="password" />
+      <label for="password" class="label2">密码</label>
+      <input
+        type="password"
+        class="input2"
+        id="password"
+        required
+        [(ngModel)]="model.password"
+        name="password"
+        #password="ngModel"
+        minlength="3"
+      />
+      <div
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="danger2"
+      >
+        <div *ngIf="password.errors.required">
+          密码不能为空
+        </div>
+        <div *ngIf="password.errors.minlength">
+          密码太短
+        </div>
+      </div>
 
-    <button (click)="handleClick()">登入</button>
+      <button
+        class="button1"
+        (click)="handleClick()"
+        type="submit"
+        [disabled]="!heroForm.form.valid"
+      >
+        登录
+      </button>
+      <button
+        class="button2"
+        type="button"
+        (click)="newHero(); heroForm.reset()"
+      >
+        重置
+      </button>
+      <div class="tip">没有账号？ ---></div>
+      <div (click)="navigate()" class="register">注册</div>
+    </form>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MyQuestionCard, TopMenu } from 'src/app/share';
+import { TopMenu } from 'src/app/share';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';

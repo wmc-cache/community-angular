@@ -4,8 +4,8 @@
   grid-template-rows: 2rem 2rem;
   grid-gap: 5px;
   grid-template-areas:
-    "title . "
-    "  content content  ";
+    "title button "
+    "  content button ";
   place-content: stretch;
   place-items: stretch;
   max-width: 55rem;
@@ -29,4 +29,25 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+button {
+  grid-area: button;
+  place-self: center;
+  display: block;
+  width: 5rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: #e64340;
+
+  cursor: pointer;
 }

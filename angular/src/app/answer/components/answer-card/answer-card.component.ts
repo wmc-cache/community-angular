@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MyCard } from 'src/app/my';
 export interface QuestionCard {
+  _id: string,
   questioner: string,
   title: string,
   description: string,

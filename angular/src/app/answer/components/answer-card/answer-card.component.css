@@ -30,6 +30,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   place-self: center start;
+  cursor: pointer;
 }
 .description {
   grid-area: description;

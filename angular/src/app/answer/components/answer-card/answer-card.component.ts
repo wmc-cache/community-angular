@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MyCard } from 'src/app/my';
+import { Router } from '@angular/router';
 export interface QuestionCard {
   _id: string,
   questioner: string,
@@ -15,9 +16,13 @@ export interface QuestionCard {
 })
 export class AnswerCardComponent implements OnInit {
   @Input() card
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   name$
   at: string
+  handleClick() {
+    this.router.navigate(["/answer/detail"], { queryParams: { _id: `${this.card._id}` } })
+  }
+
 
   ngOnInit() {
 

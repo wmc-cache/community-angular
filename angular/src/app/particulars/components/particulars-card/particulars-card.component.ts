@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from 'rxjs';
-import { hotCard } from 'src/app/share';
-import { HttpClient } from '@angular/common/http';
 
+export interface AnswerCard {
+  title: string,
+  description: string
+}
 @Component({
   selector: 'app-particulars-card',
   templateUrl: './particulars-card.component.html',
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ParticularsCardComponent implements OnInit {
   constructor() { }
-  @Input() card: hotCard
+  @Input() card: AnswerCard
 
 
 

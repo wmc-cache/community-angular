@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { ShareModule } from "../share";
-import { ParticularsContainerComponent, ParticularsCardComponent } from "./components";
-import { ParticularsRoutingModule } from "./particulars-routing.module";
+import { ParticularsCardComponent } from "./components";
+
 @NgModule({
-  declarations: [ParticularsContainerComponent, ParticularsCardComponent],
-  imports: [CommonModule, ShareModule, ParticularsRoutingModule],
-  exports: [ParticularsContainerComponent],
+  declarations: [ParticularsCardComponent],
+  imports: [CommonModule, ShareModule],
+  exports: [ParticularsCardComponent],
   providers: []
 })
 export class ParticularsModule { }

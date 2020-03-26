@@ -15,8 +15,8 @@
   grid-gap: 5px;
   grid-template-areas:
     "title title title title "
-    "  image image image image"
-    "image image image image"
+    " . . . ."
+    ". . . ."
     "attention discuss browse .";
 
   place-content: stretch;
@@ -33,6 +33,7 @@ img {
 .title {
   grid-area: title;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .attention {

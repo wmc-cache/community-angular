@@ -1,1 +1,5 @@
 <app-particulars-card [card]="card$"></app-particulars-card>
+<app-answer-content
+  *ngFor="let card of cards$ | async"
+  [card]="card"
+></app-answer-content>

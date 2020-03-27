@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DialogService } from 'src/app/dialog';
+import { DialogAnswerComponent } from 'src/app/share';
 
 export interface AnswerCard {
   title: string,
@@ -10,9 +12,20 @@ export interface AnswerCard {
   styleUrls: ['./particulars-card.component.css']
 })
 export class ParticularsCardComponent implements OnInit {
-  constructor() { }
+  constructor(private dialogService: DialogService) { }
   @Input() card: AnswerCard
-
+  handleClick() {
+    this.dialogService.open(DialogAnswerComponent, {
+      inputs: {},
+      outputs: {},
+      position: {
+        top: "20%",
+        left: '75%',
+        width: '50%',
+        height: "60%"
+      }
+    });
+  }
 
 
 

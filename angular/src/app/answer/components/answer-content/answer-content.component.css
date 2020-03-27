@@ -1,0 +1,52 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 2.5rem 2.5rem 2.5rem;
+  grid-gap: 5px;
+  grid-template-areas:
+    "answerer . . ."
+    "content  content  content  content"
+    "like   dislike     count       collect  ";
+
+  width: 40rem;
+  margin: 0 auto;
+  place-content: stretch;
+  place-items: stretch;
+  border: 1px solid darkgray;
+}
+.answerer {
+  grid-area: answerer;
+  place-self: center;
+  cursor: pointer;
+  color: #108ee9;
+}
+.content {
+  grid-area: content;
+  place-self: center start;
+  cursor: pointer;
+  color: #108ee9;
+}
+.like {
+  grid-area: like;
+  place-self: center;
+  cursor: pointer;
+  color: #108ee9;
+}
+.dislike {
+  grid-area: dislike;
+  place-self: center;
+  cursor: pointer;
+  color: #108ee9;
+}
+.collect {
+  grid-area: collect;
+  place-self: center start;
+  cursor: pointer;
+  color: #108ee9;
+}
+.count {
+  grid-area: count;
+  place-self: center start;
+  color: darkgrey;
+  font-size: small;
+}

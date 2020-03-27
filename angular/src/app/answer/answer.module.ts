@@ -4,9 +4,10 @@ import { AnswerRoutingModule } from './answer-routing-module'
 import { AnswerContainerComponent } from './components'
 import { AnswerCardComponent, AnswerDetailComponent, AnswerContentComponent } from './components'
 import { ParticularsModule } from '../particulars'
+import { ShareModule } from '../share'
 @NgModule({
   declarations: [AnswerContainerComponent, AnswerCardComponent, AnswerDetailComponent, AnswerContentComponent],
-  imports: [CommonModule, AnswerRoutingModule, ParticularsModule],
+  imports: [CommonModule, AnswerRoutingModule, ParticularsModule, ShareModule],
   exports: [AnswerContainerComponent, AnswerCardComponent, AnswerDetailComponent, AnswerContainerComponent],
   providers: [],
 })

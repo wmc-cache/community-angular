@@ -7,6 +7,7 @@ import { ParticularsCardComponent } from "./components";
   declarations: [ParticularsCardComponent],
   imports: [CommonModule, ShareModule],
   exports: [ParticularsCardComponent],
-  providers: []
+  providers: [],
+  entryComponents: []
 })
 export class ParticularsModule { }

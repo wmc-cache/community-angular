@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home'
 import { DiscoverModule } from './discover'
-import { ShareModule, DialogMyComponent, DialogQuestionComponent } from './share'
+import { ShareModule, DialogMyComponent, DialogQuestionComponent, DialogAnswerComponent } from './share'
 import { DialogModule } from './dialog'
 import { MyModule } from './my'
 import { ParticularsModule } from './particulars'
@@ -33,6 +33,6 @@ import { AnswerModule } from './answer'
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
-  entryComponents: [DialogMyComponent, DialogQuestionComponent]
+  entryComponents: [DialogMyComponent, DialogQuestionComponent, DialogAnswerComponent]
 })
 export class AppModule { }

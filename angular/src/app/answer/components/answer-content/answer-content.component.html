@@ -1,4 +1,10 @@
 <div class="container">
+  <ng-container *ngIf="name$ | async as name">
+    <div class="answerer">{{ name.name }}</div>
+  </ng-container>
   <div class="content">{{ card.content }}</div>
-  <div class="answerer">{{ card.answerer }}</div>
+  <fa-icon (click)="like()" class="like" [icon]="HandPointUP"></fa-icon>
+  <fa-icon (click)="dislike()" class="dislike" [icon]="HandPointDown"></fa-icon>
+  <fa-icon class="collect" [icon]="Heart"></fa-icon>
+  <div class="count">获赞数{{ card.voteCount }}</div>
 </div>

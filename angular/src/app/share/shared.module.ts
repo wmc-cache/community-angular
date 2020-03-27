@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms'
 import { HotCardComponent, DialogMyComponent, BackButtonComponent, ScrollableTabComponent } from './components'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MyRoutingModule } from '../my/my-routing.module'
-import { MyTopicComponent, DialogQuestionComponent, MyQuestionComponent, TopicCardComponent, VerticalGridComponent } from './components'
+import { MyAnswerComponent, DialogAnswerComponent, MyTopicComponent, DialogQuestionComponent, MyQuestionComponent, TopicCardComponent, VerticalGridComponent } from './components'
 import { AvatarDirective } from './directives'
 @NgModule({
-  declarations: [MyTopicComponent, HotCardComponent, DialogMyComponent, BackButtonComponent, ScrollableTabComponent, DialogQuestionComponent, MyQuestionComponent, AvatarDirective, TopicCardComponent, VerticalGridComponent],
+  declarations: [MyAnswerComponent, DialogAnswerComponent, MyTopicComponent, HotCardComponent, DialogMyComponent, BackButtonComponent, ScrollableTabComponent, DialogQuestionComponent, MyQuestionComponent, AvatarDirective, TopicCardComponent, VerticalGridComponent],
   imports: [CommonModule, FontAwesomeModule, MyRoutingModule, FormsModule],
-  exports: [MyTopicComponent, HotCardComponent, FontAwesomeModule, DialogMyComponent, BackButtonComponent, ScrollableTabComponent, DialogQuestionComponent, FormsModule, MyQuestionComponent, AvatarDirective, TopicCardComponent, VerticalGridComponent],
+  exports: [MyAnswerComponent, DialogAnswerComponent, MyTopicComponent, HotCardComponent, FontAwesomeModule, DialogMyComponent, BackButtonComponent, ScrollableTabComponent, DialogQuestionComponent, FormsModule, MyQuestionComponent, AvatarDirective, TopicCardComponent, VerticalGridComponent],
   providers: [],
 })
 export class ShareModule { }

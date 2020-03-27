@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MyAnswer } from 'src/app/share';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-answer',
@@ -6,12 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./answer.component.css']
 })
 export class AnswerComponent implements OnInit {
-  @Input() card
-  constructor() { }
-  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+  cards$: Observable<MyAnswer[]>
+  constructor(private http: HttpClient) { }
 
-  hero = { name: 'Dr.', password: 'Dr. What', power: this.powers[0] };
   ngOnInit() {
+    this.cards$ = this.http.get<MyAnswer[]>(``)
   }
 
 }

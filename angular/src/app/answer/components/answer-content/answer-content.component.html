@@ -5,6 +5,6 @@
   <div class="content">{{ card.content }}</div>
   <fa-icon (click)="like()" class="like" [icon]="HandPointUP"></fa-icon>
   <fa-icon (click)="dislike()" class="dislike" [icon]="HandPointDown"></fa-icon>
-  <fa-icon class="collect" [icon]="Heart"></fa-icon>
+  <fa-icon (click)="collect()" class="collect" [icon]="Heart"></fa-icon>
   <div class="count">获赞数{{ card.voteCount }}</div>
 </div>

@@ -48,7 +48,17 @@ export class AnswerContentComponent implements OnInit {
     setTimeout(() => { location.reload() }, 1000)
   }
 
-
+  collect() {
+    this.token = this.cookies.get("token");
+    let url = `http://101.37.119.148:3000/users/collectingAnswers/${this.card._id}`
+    let headerOption = {
+      headers: new HttpHeaders({
+        "Content-Type": 'application/json', "Authorization": `bearer ${this.token} `
+      })
+    }
+    this.http.put(url, {}, headerOption).subscribe((res) => { console.log(res) })
+    setTimeout(() => { location.reload() }, 1000)
+  }
 
   ngOnInit() {
     this.name$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this.card.answerer}`)

@@ -1,4 +1,7 @@
-<app-my-answer
-  *ngFor="let card of cards$ | async"
-  [card]="card"
-></app-my-answer>
+<div class="container">
+  <div class="title">我收藏的回答</div>
+  <app-my-answer
+    *ngFor="let card of cards$ | async"
+    [card]="card"
+  ></app-my-answer>
+</div>

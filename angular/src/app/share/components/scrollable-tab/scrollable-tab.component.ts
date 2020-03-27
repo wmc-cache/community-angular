@@ -11,7 +11,7 @@ export interface TopMenu {
 })
 export class ScrollableTabComponent {
 
-  @Input() menus: TopMenu[] = [{ id: 1, title: "首页", link: "home" }, { id: 2, title: "发现", link: "discover" }, { id: 3, title: "回答", link: "answer" }];
+  @Input() menus: TopMenu[] = [{ id: 1, title: "发现", link: "discover" }, { id: 2, title: "回答", link: "answer" }];
   @Input() selectLink: string
   @Input() titleColor = "";
   @Input() titleActiveColor = "#108ee9";

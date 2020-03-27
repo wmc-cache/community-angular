@@ -11,12 +11,11 @@
   max-width: 50rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 4rem 4rem 1rem 1rem;
+  grid-template-rows: 4rem 2.5rem 1rem;
   grid-gap: 5px;
   grid-template-areas:
     "title title title title "
     " . . . answer"
-    ". . .  ."
     "attention discuss browse .";
 
   place-content: stretch;

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TopMenu } from 'src/app/share';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
@@ -24,7 +22,8 @@ export class MyContainerComponent {
 
   }
   handleClick() {
-    this.cookies.deleteAll("/my")
+    this.router.navigate(["/discover"])
+
   }
 
 

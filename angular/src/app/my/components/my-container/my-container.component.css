@@ -21,3 +21,7 @@
   position: absolute;
   right: 0;
 }
+.back {
+  color: #108ee9;
+  cursor: pointer;
+}

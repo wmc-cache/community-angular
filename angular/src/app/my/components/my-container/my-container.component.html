@@ -1,8 +1,5 @@
 <div class="page">
   <span (click)="handleClick()" class="back">首页</span>>我的主页
-  <app-scrollable-tab
-    [menus]="cards"
-    (tabSelected)="link($event)"
-  ></app-scrollable-tab>
+  <app-tab-my (tabSelected)="link($event)"></app-tab-my>
   <router-outlet></router-outlet>
 </div>

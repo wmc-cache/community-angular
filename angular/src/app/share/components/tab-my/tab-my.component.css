@@ -1,0 +1,23 @@
+ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #108ee9;
+  white-space: nowrap;
+}
+a:hover {
+  color: snow;
+}
+a {
+  height: 4.5rem;
+}
+
+.select {
+  background-color: #108ee9;
+  color: snow;
+  padding: 0.9rem;
+}

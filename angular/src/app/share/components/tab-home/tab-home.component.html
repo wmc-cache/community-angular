@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let menu of menus; let i = index" [ngStyle]="{ margin: margin }">
+    <a [ngClass]="{ select: +select === i }" (click)="handSelect(i)"
+      >{{ menu.title }}
+    </a>
+  </li>
+</ul>

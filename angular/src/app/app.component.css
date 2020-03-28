@@ -24,10 +24,9 @@
 .name3:hover {
   color: snow;
 }
-app-scrollable-tab {
+app-tab-home {
   grid-area: tab;
   place-self: center;
-  margin-top: 0.2rem;
 }
 
 button {

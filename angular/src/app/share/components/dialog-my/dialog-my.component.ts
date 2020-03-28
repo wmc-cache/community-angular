@@ -15,7 +15,7 @@ export class DialogMyComponent implements OnInit {
   constructor(private dialogService: DialogService, private cookies: CookieService, private router: Router) { }
   handleClick() {
     this.router.navigate(['/my']);
-    this.cookies.set("select", this.select, new Date(new Date().getTime() + this.time), "./my");
+
     this.dialogService.close()
   }
   navigate() {

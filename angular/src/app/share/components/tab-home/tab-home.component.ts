@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Location } from "@angular/common";
 export interface TopMenu {
@@ -7,11 +7,12 @@ export interface TopMenu {
   link: string;
 }
 @Component({
-  selector: "app-scrollable-tab",
-  templateUrl: "./scrollable-tab.component.html",
-  styleUrls: ["./scrollable-tab.component.css"]
+  selector: 'app-tab-home',
+  templateUrl: './tab-home.component.html',
+  styleUrls: ['./tab-home.component.css']
 })
-export class ScrollableTabComponent implements OnInit {
+export class TabHomeComponent implements OnInit {
+
   constructor(private location: Location, private cookies: CookieService) { }
   @Input() menus: TopMenu[] = [{ id: 0, title: "发现", link: "discover" }, { id: 1, title: "回答", link: "answer" }];
   @Input() margin = "0.5rem  2.5rem";
@@ -26,4 +27,5 @@ export class ScrollableTabComponent implements OnInit {
   ngOnInit(): void {
     this.select = this.cookies.get("select")
   }
+
 }

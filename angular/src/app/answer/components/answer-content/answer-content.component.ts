@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MyCard } from 'src/app/my';
 import { Observable } from 'rxjs';
-import { faHandPointUp, faHandPointDown, faHeart } from '@fortawesome/free-solid-svg-icons'
+
 import { CookieService } from 'ngx-cookie-service';
 import { Location } from "@angular/common";
 
@@ -21,9 +21,7 @@ export class AnswerContentComponent implements OnInit {
   @Input() card: ContentCard
   @Input() name$: Observable<MyCard>
   constructor(private location: Location, private http: HttpClient, private cookies: CookieService) { }
-  HandPointUP = faHandPointUp
-  HandPointDown = faHandPointDown
-  Heart = faHeart
+
   token
   like() {
     this.token = this.cookies.get("token");

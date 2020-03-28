@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { hotCard } from 'src/app/share';
-import { HttpClient } from '@angular/common/http';
 
+import { HttpClient } from '@angular/common/http';
+export interface hotCard {
+  id: string,
+  title: string,
+  description: string,
+  img: string,
+  hot: string
+}
 @Component({
   selector: 'app-home-hot',
   templateUrl: './home-hot.component.html',

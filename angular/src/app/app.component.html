@@ -6,8 +6,8 @@
   ></app-scrollable-tab>
 
   <button (click)="question()">提问</button>
-  <fa-icon class="icon1" [icon]="bell"></fa-icon>
-  <fa-icon class="icon2" [icon]="comments"></fa-icon>
+  <!-- <fa-icon class="icon1" [icon]="bell"></fa-icon>
+  <fa-icon class="icon2" [icon]="comments"></fa-icon> -->
   <ng-container *ngIf="my$ | async as my">
     <div class="name" (click)="handleClick()">{{ my.name }}</div>
   </ng-container>

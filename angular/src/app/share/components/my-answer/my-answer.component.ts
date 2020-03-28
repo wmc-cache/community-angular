@@ -9,7 +9,7 @@ export interface MyAnswer {
   styleUrls: ['./my-answer.component.css']
 })
 export class MyAnswerComponent implements OnInit {
-  @Input() card: Observable<MyAnswer>
+  @Input() card
   constructor() { }
 
   ngOnInit() {

@@ -1,12 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Location } from "@angular/common";
 
 export interface MyTopic {
   _id: string,
-  img: string,
-  title: string
+  avatar_url: string,
+  name: string
 }
 @Component({
   selector: 'app-my-topic',
@@ -17,6 +17,9 @@ export class MyTopicComponent {
   @Input() card: MyTopic
   token
   constructor(private location: Location, private cookies: CookieService, private http: HttpClient) { }
+
+
+
   handleClick() {
     this.token = this.cookies.get("token");
     let url = `http://101.37.119.148:3000/users/followingTopics/${this.card._id}`

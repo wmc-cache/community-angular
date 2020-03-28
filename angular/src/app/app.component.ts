@@ -1,5 +1,5 @@
 import { Component, OnInit, SimpleChanges, DoCheck } from '@angular/core';
-import { faComments, faBell } from '@fortawesome/free-solid-svg-icons'
+
 import { DialogMyComponent, DialogQuestionComponent } from './share';
 import { DialogService } from './dialog';
 import { HttpClient } from '@angular/common/http';
@@ -16,8 +16,7 @@ import { Location } from "@angular/common";
 export class AppComponent implements OnInit {
 
   constructor(private location: Location, private cookies: CookieService, private router: Router, private dialogService: DialogService, private http: HttpClient, private route: ActivatedRoute) { }
-  comments = faComments
-  bell = faBell
+
   my$: Observable<MyCard>
   _id
 

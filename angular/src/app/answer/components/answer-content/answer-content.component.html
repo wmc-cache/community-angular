@@ -3,8 +3,9 @@
     <div class="answerer">{{ name.name }}</div>
   </ng-container>
   <div class="content">{{ card.content }}</div>
-  <fa-icon (click)="like()" class="like" [icon]="HandPointUP"></fa-icon>
-  <fa-icon (click)="dislike()" class="dislike" [icon]="HandPointDown"></fa-icon>
-  <fa-icon (click)="collect()" class="collect" [icon]="Heart"></fa-icon>
+  <div (click)="like()" class="like">like</div>
+  <div (click)="dislike()" class="dislike">dislike</div>
+  <div (click)="collect()" class="collect">collect</div>
+
   <div class="count">获赞数{{ card.voteCount }}</div>
 </div>

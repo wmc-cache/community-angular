@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
         top: "20%",
         left: '75%',
         width: '50%',
-        height: "60%"
+        height: "40%"
       }
     });
   }

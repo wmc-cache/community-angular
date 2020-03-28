@@ -9,13 +9,6 @@
   text-overflow: ellipsis;
   background-color: skyblue;
 }
-.row1,
-.row2,
-.row3,
-.row4 {
-  display: flex;
-  margin: 0.5rem;
-}
 
 .icon1,
 .icon2,
@@ -27,5 +20,5 @@
   font-size: small;
   color: #108ee9;
   cursor: pointer;
-  margin-left: 0.1rem;
+  margin-left: 1rem;
 }

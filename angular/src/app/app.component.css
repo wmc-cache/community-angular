@@ -2,10 +2,10 @@
   position: fixed;
   top: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr 2fr 1fr;
   grid-template-rows: 3.5rem;
   grid-gap: 5px;
-  grid-template-areas: ". title tab  .  button icon1 icon2  name ";
+  grid-template-areas: ". title tab  .  button  . name ";
   background-color: skyblue;
   width: 100%;
   place-content: stretch;
@@ -58,20 +58,6 @@ button {
   color: #108ee9;
   cursor: pointer;
   white-space: nowrap;
-}
-.icon1 {
-  grid-area: icon1;
-  place-self: center;
-  cursor: pointer;
-  color: #108ee9;
-  font-size: larger;
-}
-.icon2 {
-  grid-area: icon2;
-  place-self: center start;
-  cursor: pointer;
-  color: #108ee9;
-  font-size: larger;
 }
 
 .hidden {

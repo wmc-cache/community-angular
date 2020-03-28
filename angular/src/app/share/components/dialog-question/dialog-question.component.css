@@ -1,52 +1,17 @@
 .push {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 4rem 2rem 6rem 6rem 2rem 2rem 2rem;
+  grid-template-rows: 2rem 6rem 6rem 2rem 2rem 2rem;
   grid-gap: 5px;
   grid-template-areas:
-    "img  name name name  "
     " input input input input "
     "textarea textarea textarea  textarea "
     "textarea textarea textarea textarea "
-    "img1  img2  img3  img4"
-    "title1 title2 title3 title4 "
     ". button   button .";
   place-content: stretch;
   place-items: stretch;
 }
 
-img {
-  grid-area: img;
-  place-self: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  user-select: none;
-}
-
-.img1 {
-  grid-area: img1;
-  width: 1.5rem;
-  height: 1.5rem;
-  user-select: none;
-}
-.img2 {
-  grid-area: img2;
-  width: 1.5rem;
-  height: 1.5rem;
-  user-select: none;
-}
-.img3 {
-  grid-area: img3;
-  width: 1.5rem;
-  height: 1.5rem;
-  user-select: none;
-}
-.img4 {
-  grid-area: img4;
-  width: 1.5rem;
-  height: 1.5rem;
-  user-select: none;
-}
 .push .name {
   grid-area: name;
   place-self: center start;
@@ -61,34 +26,6 @@ img {
   background-color: skyblue;
 }
 
-.push .title1 {
-  grid-area: title1;
-  font-size: 0.7rem;
-  place-self: center;
-  color: darkgrey;
-  user-select: none;
-}
-.push .title2 {
-  grid-area: title2;
-  font-size: 0.7rem;
-  place-self: center;
-  color: darkgrey;
-  user-select: none;
-}
-.push .title3 {
-  grid-area: title3;
-  font-size: 0.7rem;
-  place-self: center;
-  color: darkgrey;
-  user-select: none;
-}
-.push .title4 {
-  grid-area: title4;
-  font-size: 0.7rem;
-  place-self: center;
-  color: darkgrey;
-  user-select: none;
-}
 input {
   grid-area: input;
   height: 1.5rem;
@@ -101,7 +38,7 @@ input {
   background: #fff;
   border-radius: 0.2rem;
   width: 25rem;
-  margin: 0 auto;
+  margin: 1px auto;
 }
 
 button {

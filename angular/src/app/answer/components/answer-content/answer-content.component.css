@@ -31,18 +31,24 @@
   place-self: center;
   cursor: pointer;
   color: #108ee9;
+  width: 1rem;
+  height: 1rem;
 }
 .dislike {
   grid-area: dislike;
   place-self: center;
   cursor: pointer;
   color: #108ee9;
+  width: 1rem;
+  height: 1rem;
 }
 .collect {
   grid-area: collect;
   place-self: center start;
   cursor: pointer;
   color: #108ee9;
+  width: 1rem;
+  height: 1rem;
 }
 .count {
   grid-area: count;

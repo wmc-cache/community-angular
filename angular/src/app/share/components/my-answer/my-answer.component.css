@@ -11,3 +11,21 @@
   cursor: pointer;
   font-size: small;
 }
+button {
+  width: 5rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: #108ee9;
+  cursor: pointer;
+  height: 2rem;
+}

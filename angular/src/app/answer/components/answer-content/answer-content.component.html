@@ -3,9 +3,24 @@
     <div class="answerer">{{ name.name }}</div>
   </ng-container>
   <div class="content">{{ card.content }}</div>
-  <div (click)="like()" class="like">like</div>
-  <div (click)="dislike()" class="dislike">dislike</div>
-  <div (click)="collect()" class="collect">collect</div>
+  <img
+    (click)="like()"
+    class="like"
+    src="../../../../assets/icons/赞同.png"
+    alt=""
+  />
+  <img
+    (click)="dislike()"
+    class="dislike"
+    src="../../../../assets/icons/不赞同-0.png"
+    alt=""
+  />
+  <img
+    (click)="collect()"
+    class="collect"
+    src="../../../../assets/icons/收 藏 (1).png"
+    alt=""
+  />
 
   <div class="count">获赞数{{ card.voteCount }}</div>
 </div>

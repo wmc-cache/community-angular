@@ -11,17 +11,19 @@ import { DialogService } from 'src/app/dialog';
 export class DialogMyComponent implements OnInit {
 
   time: number = 2 * 60 * 60 * 1000;
-
+  select = "0"
   constructor(private dialogService: DialogService, private cookies: CookieService, private router: Router) { }
   handleClick() {
     this.router.navigate(['/my']);
+    this.cookies.set("select", this.select, new Date(new Date().getTime() + this.time), "./my");
     this.dialogService.close()
   }
   navigate() {
 
     this.router.navigate(['/login']);
+
     this.dialogService.close()
-    setTimeout(() => { this.cookies.deleteAll() }, 500)
+    setTimeout(() => { this.cookies.deleteAll() }, 100)
 
 
   }

@@ -2,7 +2,7 @@
   <span (click)="handleClick()" class="back">首页</span>>我的主页
   <app-scrollable-tab
     [menus]="cards"
-    (tabselected)="link($event)"
+    (tabSelected)="link($event)"
   ></app-scrollable-tab>
   <router-outlet></router-outlet>
 </div>

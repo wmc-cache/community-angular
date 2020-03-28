@@ -1,16 +1,6 @@
 <ul>
   <li *ngFor="let menu of menus; let i = index" [ngStyle]="{ margin: margin }">
-    <a
-      (click)="handselect(i)"
-      [ngStyle]="{ color: i === selectindex ? titleActiveColor : titleColor }"
-      >{{ menu.title }}</a
-    >
-
-    <span
-      class="under"
-      *ngIf="menu.link === selectedTabLink"
-      [ngStyle]="{ 'background-color': underColor }"
-    >
-    </span>
+    <a (click)="handSelect(i)">{{ menu.title }} </a>
+    <span *ngIf="+select === i">____</span>
   </li>
 </ul>

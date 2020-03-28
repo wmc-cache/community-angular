@@ -16,16 +16,23 @@ import { Location } from "@angular/common";
 export class AppComponent implements OnInit {
 
   constructor(private location: Location, private cookies: CookieService, private router: Router, private dialogService: DialogService, private http: HttpClient, private route: ActivatedRoute) { }
-
+  time: number = 2 * 60 * 60 * 10000;
   my$: Observable<MyCard>
   _id
-
-  selectLink
+  select
 
   link(menu) {
+    this.select = menu.id
+    this.cookies.set("select", this.select, new Date(new Date().getTime() + this.time), "./");
     this.router.navigate([menu.link])
-
   }
+
+  ngOnInit() {
+
+    this._id = this.cookies.get("_id");
+    this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this._id}`)
+  }
+
 
 
   question() {
@@ -62,10 +69,5 @@ export class AppComponent implements OnInit {
   }
 
 
-  ngOnInit() {
 
-
-    this._id = this.cookies.get("_id");
-    this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this._id}`)
-  }
 }

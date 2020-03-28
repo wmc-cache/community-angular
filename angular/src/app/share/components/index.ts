@@ -1,7 +1,6 @@
 
 export * from './dialog-my'
 export * from './back-button'
-export * from './scrollable-tab'
 export * from './dialog-question'
 export * from './my-question'
 export * from './topic-card'
@@ -9,3 +8,4 @@ export * from './vertical-grid'
 export * from './my-topic'
 export * from './dialog-answer'
 export * from './my-answer'
+export * from './scrollable-tab'

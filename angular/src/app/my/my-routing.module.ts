@@ -10,7 +10,7 @@ const routes: Routes = [
 
 
     children: [
-      { path: "", redirectTo: "topic", pathMatch: "full" },
+      { path: "", redirectTo: "question", pathMatch: "full" },
       {
         path: "topic",
         component: TopicComponent

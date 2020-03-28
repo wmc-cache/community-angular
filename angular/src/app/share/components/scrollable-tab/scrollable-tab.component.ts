@@ -12,13 +12,14 @@ export interface TopMenu {
 export class ScrollableTabComponent {
 
   @Input() menus: TopMenu[] = [{ id: 1, title: "发现", link: "discover" }, { id: 2, title: "回答", link: "answer" }];
-  @Input() selectLink: string
+  @Input() selectedTabLink: string
   @Input() titleColor = "";
   @Input() titleActiveColor = "#108ee9";
   @Input() underColor = "#108ee9";
   @Input() margin = "0.5rem  2.5rem";
-
   @Output() tabselected = new EventEmitter();
+
+
 
   handselect(index) {
 

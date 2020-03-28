@@ -23,9 +23,14 @@ export class AppComponent implements OnInit {
 
   link(menu) {
     this.select = menu.id
-    this.cookies.set("select", this.select, new Date(new Date().getTime() + this.time), "./");
+    this.cookies.set("select", this.select, new Date(new Date().getTime() + this.time), "/");
     this.router.navigate([menu.link])
   }
+
+
+
+
+
 
   ngOnInit() {
 

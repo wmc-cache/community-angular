@@ -23,7 +23,7 @@ export class DialogMyComponent implements OnInit {
     this.router.navigate(['/login']);
 
     this.dialogService.close()
-    setTimeout(() => { this.cookies.deleteAll() }, 100)
+    setTimeout(() => { this.cookies.deleteAll() }, 500)
 
 
   }

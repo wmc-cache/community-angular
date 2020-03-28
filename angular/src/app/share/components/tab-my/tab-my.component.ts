@@ -13,7 +13,7 @@ export class TabMyComponent implements OnInit {
   @Input() menus: TopMenu[] = [{ id: 0, title: "问题", link: "my/question" }, { id: 1, title: "回答", link: "my/answer" }, { id: 2, title: "话题", link: "my/topic" }];
   @Input() margin = "0.5rem  2.5rem";
   @Output() tabSelected = new EventEmitter();
-  select
+  select1
   time: number = 2 * 60 * 60 * 10000;
 
   handSelect(index: number) {
@@ -22,8 +22,8 @@ export class TabMyComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    this.select = this.cookies.get("select1")
-    console.log(this.select)
+    this.select1 = this.cookies.get("select1")
+
   }
 
 }

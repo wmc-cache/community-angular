@@ -14,12 +14,12 @@ export class MyContainerComponent {
 
 
   constructor(private cookies: CookieService, private router: Router) { }
-  select
+  select1
 
 
   link(menu) {
-    this.select = menu.id
-    this.cookies.set("select1", this.select, new Date(new Date().getTime() + this.time), "./");
+    this.select1 = menu.id
+    this.cookies.set("select1", this.select1, new Date(new Date().getTime() + this.time), "/my");
     this.router.navigate([menu.link])
 
   }

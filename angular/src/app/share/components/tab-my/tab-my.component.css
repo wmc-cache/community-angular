@@ -9,15 +9,11 @@ li {
   color: #108ee9;
   white-space: nowrap;
 }
-a:hover {
-  color: snow;
-}
+
 a {
   height: 4.5rem;
 }
 
 .select {
-  background-color: #108ee9;
-  color: snow;
-  padding: 0.9rem;
+  border-bottom: 0.1rem solid #108ee9;
 }

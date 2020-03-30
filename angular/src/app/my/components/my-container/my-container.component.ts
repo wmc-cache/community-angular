@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TopMenu } from 'src/app/share';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
-
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-my-container',
@@ -13,7 +13,8 @@ export class MyContainerComponent {
   time: number = 2 * 60 * 60 * 10000;
 
 
-  constructor(private cookies: CookieService, private router: Router) { }
+  constructor(private location: Location, private cookies: CookieService, private router: Router) { }
+  select = "0"
   select1
 
 
@@ -28,6 +29,8 @@ export class MyContainerComponent {
 
   handleClick() {
     this.router.navigate(["/discover"])
+    this.cookies.set("select", this.select, new Date(new Date().getTime() + this.time), "/");
+    setTimeout(() => { location.reload() }, 1)
   }
 
 

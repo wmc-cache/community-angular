@@ -19,7 +19,7 @@ export class MyAnswerComponent implements OnInit {
   ngOnInit() {
   }
   handleClick() {
-
+    console.log(this.card)
     let url = `http://101.37.119.148:3000/users/collectingAnswers/${this.card._id}`
     this.token = this.cookies.get("token");
     let headerOption = { headers: new HttpHeaders({ "Content-Type": 'application/json', "Authorization": `bearer ${this.token}` }) }

@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-
+import { Location } from "@angular/common"
 @Component({
   selector: 'app-dialog-question',
   templateUrl: './dialog-question.component.html',
   styleUrls: ['./dialog-question.component.css']
 })
 export class DialogQuestionComponent {
-  constructor(private cookies: CookieService, private http: HttpClient) { }
+  constructor(private location: Location, private cookies: CookieService, private http: HttpClient) { }
   value = '';
   content = '';
   token
@@ -32,7 +32,7 @@ export class DialogQuestionComponent {
       console.log("POST请求：", res)
       this.value = ""
       this.content = ""
-
+      setTimeout(() => { location.reload() }, 100)
     })
   }
 

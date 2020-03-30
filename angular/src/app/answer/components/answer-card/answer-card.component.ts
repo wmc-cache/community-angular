@@ -15,7 +15,7 @@ export interface QuestionCard {
   styleUrls: ['./answer-card.component.css']
 })
 export class AnswerCardComponent implements OnInit {
-  @Input() card
+  @Input() card: QuestionCard
   constructor(private http: HttpClient, private router: Router) { }
   name$
   at: string

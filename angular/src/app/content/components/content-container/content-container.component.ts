@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { TopicCard } from 'src/app/share';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { QuestionCard } from 'src/app/answer';
+import { AnswerCard } from 'src/app/particulars';
 
 @Component({
   selector: 'app-content-container',
@@ -12,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ContentContainerComponent implements OnInit {
   card$: Observable<TopicCard>
   _id
+  cards$: Observable<QuestionCard[]>
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,6 +22,7 @@ export class ContentContainerComponent implements OnInit {
     this.route.queryParamMap.subscribe(params => { this._id = params.get('_id') })
 
     this.card$ = this.http.get<TopicCard>(`http://101.37.119.148:3000/topics/${this._id}`)
+    this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/topics/${this._id}/questions`)
   }
 
 }

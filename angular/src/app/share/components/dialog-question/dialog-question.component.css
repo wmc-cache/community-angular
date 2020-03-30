@@ -1,7 +1,7 @@
 .push {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 2rem 6rem 6rem 2rem 2rem 2rem;
+  grid-template-rows: 2rem 6rem 6rem 2rem;
   grid-gap: 5px;
   grid-template-areas:
     " input input input input "

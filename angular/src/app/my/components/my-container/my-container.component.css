@@ -17,11 +17,10 @@
   color: #108ee9;
 }
 
-.container3 {
-  position: absolute;
-  right: 0;
-}
 .back {
   color: #108ee9;
   cursor: pointer;
+}
+.nav {
+  padding: 2rem;
 }

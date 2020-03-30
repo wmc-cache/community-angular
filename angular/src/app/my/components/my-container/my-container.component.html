@@ -1,5 +1,9 @@
 <div class="page">
-  <span (click)="handleClick()" class="back">首页</span>>我的主页
+  <ng-container class="nav">
+    <span (click)="handleClick()" class="back">首页</span>
+    <span> >我的主页</span>
+  </ng-container>
+
   <app-tab-my (tabSelected)="link($event)"></app-tab-my>
   <router-outlet></router-outlet>
 </div>

@@ -1,1 +1,8 @@
 <app-content-card [card]="card$ | async"></app-content-card>
+<div class="title">热门问题</div>
+<div class="container">
+  <app-answer-card
+    *ngFor="let card of cards$ | async"
+    [card]="card"
+  ></app-answer-card>
+</div>

@@ -3,8 +3,10 @@
     <div class="questioner">{{ name.name }}</div>
   </ng-container>
 
-  <div (click)="handleClick()" class="title">{{ card.title }}</div>
-  <div class="description">{{ card.description }}</div>
+  <div class="title" (click)="handleClick()">{{ card.title }}</div>
+  <div class="description" (click)="handleClick()">
+    {{ card.description }}
+  </div>
 
   <div class="at">{{ card.createdAt | date: "yyyy-MM-dd HH:mm:ss" }}</div>
 </div>

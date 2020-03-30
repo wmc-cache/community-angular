@@ -2,9 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MyCard } from 'src/app/my';
 import { Observable } from 'rxjs';
-
+import { filter, map, switchMap } from 'rxjs/operators';
 import { CookieService } from 'ngx-cookie-service';
 import { Location } from "@angular/common";
+import { MyAnswer } from 'src/app/share';
 
 export interface ContentCard {
   _id: string
@@ -21,7 +22,7 @@ export class AnswerContentComponent implements OnInit {
   @Input() card: ContentCard
   @Input() name$: Observable<MyCard>
   constructor(private location: Location, private http: HttpClient, private cookies: CookieService) { }
-
+  _id
   token
   like() {
     this.token = this.cookies.get("token");
@@ -47,6 +48,16 @@ export class AnswerContentComponent implements OnInit {
   }
 
   collect() {
+    this._id = this.cookies.get("_id");
+    this.http.get<MyAnswer[]>(`http://101.37.119.148:3000/users/${this._id}/collectingAnswers`)
+      .pipe(map(ele => { console.log(ele.forEach(ele => { console.log(ele) })) }))
+
+
+
+
+
+
+
     this.token = this.cookies.get("token");
     let url = `http://101.37.119.148:3000/users/collectingAnswers/${this.card._id}`
     let headerOption = {
@@ -54,8 +65,8 @@ export class AnswerContentComponent implements OnInit {
         "Content-Type": 'application/json', "Authorization": `bearer ${this.token} `
       })
     }
-    this.http.put(url, {}, headerOption).subscribe((res) => { console.log(res) })
-    setTimeout(() => { location.reload() }, 1000)
+    this.http.put(url, {}, headerOption).subscribe((res) => { })
+    // setTimeout(() => { location.reload() }, 1000)
   }
 
   ngOnInit() {

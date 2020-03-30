@@ -34,12 +34,13 @@
 }
 .description {
   grid-area: description;
+
   font-size: 0.8rem;
   margin: 0.5rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  place-self: center;
+  cursor: pointer;
 }
 .at {
   grid-area: at;

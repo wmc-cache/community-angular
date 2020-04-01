@@ -24,6 +24,7 @@
   grid-area: textarea;
   font-size: larger;
   background-color: skyblue;
+  resize: none;
 }
 
 input {

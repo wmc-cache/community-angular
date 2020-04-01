@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Location } from '@angular/common'
 export interface MyAnswer {
-  _id: number
+  _id: string
   content: string
 }
 @Component({

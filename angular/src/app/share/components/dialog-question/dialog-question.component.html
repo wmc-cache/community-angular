@@ -6,6 +6,12 @@
     [(ngModel)]="value"
     type="text"
   />
-  <textarea class="textarea" name="content" [(ngModel)]="content"> </textarea>
+  <textarea
+    placeholder="详细描述你的问题"
+    class="textarea"
+    name="content"
+    [(ngModel)]="content"
+  >
+  </textarea>
   <button (click)="handleClick()">提问题</button>
 </div>

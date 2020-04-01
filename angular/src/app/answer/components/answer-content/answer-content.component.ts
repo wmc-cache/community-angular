@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MyCard } from 'src/app/my';
 import { Observable } from 'rxjs';
@@ -18,12 +18,16 @@ export interface ContentCard {
   templateUrl: './answer-content.component.html',
   styleUrls: ['./answer-content.component.css']
 })
-export class AnswerContentComponent implements OnInit {
+export class AnswerContentComponent implements OnInit, AfterContentInit {
   @Input() card: ContentCard
   @Input() name$: Observable<MyCard>
   constructor(private location: Location, private http: HttpClient, private cookies: CookieService) { }
   _id
   token
+  arr = []
+  list$
+  collecting = []
+
   like() {
     this.token = this.cookies.get("token");
     let url = `http://101.37.119.148:3000/users/likingAnswers/${this.card._id}`
@@ -48,13 +52,9 @@ export class AnswerContentComponent implements OnInit {
   }
 
   collect() {
-    this._id = this.cookies.get("_id");
-    this.http.get<MyAnswer[]>(`http://101.37.119.148:3000/users/${this._id}/collectingAnswers`)
-      .pipe(map(ele => { console.log(ele.forEach(ele => { console.log(ele) })) }))
 
 
-
-
+    console.log(this.collecting)
 
 
 
@@ -70,7 +70,22 @@ export class AnswerContentComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
+    this._id = this.cookies.get("_id");
+    this.list$ = this.http.get<MyAnswer[]>(`http://101.37.119.148:3000/users/${this._id}/collectingAnswers`)
+      .pipe(map(all => all.filter(ele => ele._id === this.card._id)))
+
+    this.list$.forEach(element => {
+      this.arr.push(element)
+    });
+
+
+
     this.name$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this.card.answerer}`)
   }
+  ngAfterContentInit(): void {
 
+    console.log(this.arr)
+  }
 }

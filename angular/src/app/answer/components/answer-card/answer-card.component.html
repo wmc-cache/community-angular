@@ -1,6 +1,6 @@
 <div class="container">
-  <ng-container *ngIf="name$ | async as name">
-    <div class="questioner">{{ name.name }}</div>
+  <ng-container *ngIf="my$ | async as my">
+    <div class="questioner">{{ my.name }}</div>
   </ng-container>
 
   <div class="title" (click)="handleClick()">{{ card.title }}</div>

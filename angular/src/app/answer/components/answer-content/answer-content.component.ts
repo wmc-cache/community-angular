@@ -66,7 +66,7 @@ export class AnswerContentComponent implements OnInit, AfterContentInit {
       })
     }
     this.http.put(url, {}, headerOption).subscribe((res) => { })
-    // setTimeout(() => { location.reload() }, 1000)
+    setTimeout(() => { location.reload() }, 1000)
   }
 
   ngOnInit() {

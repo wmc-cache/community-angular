@@ -10,7 +10,7 @@ import { DialogPushComponent } from 'src/app/share';
   styleUrls: ['./register-container.component.css']
 })
 export class RegisterContainerComponent implements OnInit {
-
+  submitted = false;
 
   constructor(private dialogService: DialogService, private http: HttpClient, private router: Router) { }
   model = new User("", "");
@@ -19,7 +19,9 @@ export class RegisterContainerComponent implements OnInit {
 
   }
   get user() { return JSON.stringify(this.model); }
-
+  go() {
+    this.router.navigate(["./login"])
+  }
   handleClick() {
 
     let url = 'http://101.37.119.148:3000/users'
@@ -27,7 +29,7 @@ export class RegisterContainerComponent implements OnInit {
     this.http.post(url, this.user, headerOption).subscribe((res) => {
       console.log("POST请求：", res)
       if (res) {
-
+        this.submitted = true
 
       }
 

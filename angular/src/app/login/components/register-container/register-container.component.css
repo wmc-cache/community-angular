@@ -133,6 +133,11 @@ button {
   cursor: pointer;
 }
 
+.tip {
+  margin: 7rem auto;
+  text-align: center;
+}
+
 .ng-valid[required],
 .ng-valid.required {
   border-left: 5px solid #42a948; /* green */

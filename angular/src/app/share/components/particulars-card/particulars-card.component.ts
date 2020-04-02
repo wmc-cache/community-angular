@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DialogService } from 'src/app/dialog';
-import { DialogAnswerComponent } from 'src/app/share';
-
+import { DialogAnswerComponent } from '..';
 export interface AnswerCard {
   title: string,
   description: string

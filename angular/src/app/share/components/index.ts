@@ -1,4 +1,3 @@
-
 export * from './dialog-my'
 export * from './back-button'
 export * from './dialog-question'
@@ -11,3 +10,4 @@ export * from './my-answer'
 export * from './tab-my'
 export * from './tab-home'
 export * from './dialog-push'
+export * from './particulars-card'

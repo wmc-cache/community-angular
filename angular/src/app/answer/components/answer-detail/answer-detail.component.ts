@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AnswerCard } from 'src/app/particulars';
+
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { ContentCard } from '..';
+import { AnswerCard } from 'src/app/share';
 
 @Component({
   selector: 'app-answer-detail',

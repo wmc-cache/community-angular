@@ -1,5 +1,4 @@
 import { Component, OnInit, SimpleChanges, DoCheck } from '@angular/core';
-
 import { DialogMyComponent, DialogQuestionComponent } from './share';
 import { DialogService } from './dialog';
 import { HttpClient } from '@angular/common/http';

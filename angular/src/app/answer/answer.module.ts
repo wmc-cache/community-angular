@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { AnswerRoutingModule } from './answer-routing-module'
 import { AnswerContainerComponent } from './components'
 import { AnswerCardComponent, AnswerDetailComponent, AnswerContentComponent } from './components'
-import { ParticularsModule } from '../particulars'
 import { ShareModule } from '../share'
 @NgModule({
   declarations: [AnswerContainerComponent, AnswerCardComponent, AnswerDetailComponent, AnswerContentComponent],
-  imports: [CommonModule, AnswerRoutingModule, ParticularsModule, ShareModule],
+  imports: [CommonModule, AnswerRoutingModule, ShareModule],
   exports: [AnswerContainerComponent, AnswerCardComponent, AnswerDetailComponent, AnswerContainerComponent],
   providers: [],
 })

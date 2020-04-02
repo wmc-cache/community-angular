@@ -4,7 +4,7 @@ import { TopicCard } from 'src/app/share';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { QuestionCard } from 'src/app/answer';
-import { AnswerCard } from 'src/app/particulars';
+
 
 @Component({
   selector: 'app-content-container',

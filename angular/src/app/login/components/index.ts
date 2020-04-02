@@ -1,2 +1,2 @@
 export * from './login-container'
-export * from './register'
+export * from './register-container'

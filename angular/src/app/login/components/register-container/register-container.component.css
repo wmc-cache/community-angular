@@ -1,0 +1,143 @@
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6000;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+.container {
+  max-width: 40rem;
+  margin: 10rem auto;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr 1fr 1fr;
+  grid-template-rows: 5.5rem 2rem 2.5rem 1rem 2rem 2.5rem 3.5rem 3.5rem;
+
+  grid-template-areas:
+    ". h1 h1 ."
+    "label1 input1 input1 ."
+    ". danger1 danger1  ."
+    ". . . ."
+    "label2 input2 input2 ."
+    " . danger2 danger2  ."
+    " . button1  button2 . "
+    " .  tip   register . ";
+
+  width: 100%;
+  place-content: stretch;
+  place-items: stretch;
+}
+h1 {
+  grid-area: h1;
+  color: #108ee9;
+  place-self: start center;
+}
+label {
+  color: #108ee9;
+  cursor: pointer;
+}
+.label1 {
+  grid-area: label1;
+  place-self: center;
+  cursor: pointer;
+}
+.label2 {
+  grid-area: label2;
+  place-self: center;
+}
+.input1 {
+  grid-area: input1;
+  place-self: center;
+}
+.input2 {
+  grid-area: input2;
+  place-self: center;
+}
+
+.button1 {
+  grid-area: button1;
+}
+.button2 {
+  grid-area: button2;
+}
+
+.danger1 {
+  grid-area: danger1;
+
+  border-radius: 4px;
+  background-color: #a94442;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+}
+.danger2 {
+  grid-area: danger2;
+  border-radius: 4px;
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+}
+
+.register {
+  grid-area: register;
+  place-self: center;
+  cursor: pointer;
+  color: #108ee9;
+}
+
+.tip {
+  grid-area: tip;
+  place-self: center;
+  color: #108ee9;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid darkgray;
+  font-size: 0.8rem;
+  padding-left: 1.5rem;
+  background: #fff;
+  border-radius: 0.2rem;
+  min-width: 7rem;
+}
+button {
+  grid-area: button;
+  place-self: center;
+  display: block;
+  width: 5rem;
+  margin: 3rem auto;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-size: 0.7rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+  background-color: #108ee9;
+  cursor: pointer;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
+}

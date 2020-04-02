@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginContainerComponent } from './components'
+import { LoginContainerComponent, RegisterContainerComponent } from './components'
 import { LoginRoutingModule } from './login-routing.module'
-import { RegisterComponent } from './components'
 import { ShareModule } from '../share'
+
 @NgModule({
-  declarations: [LoginContainerComponent, RegisterComponent],
+  declarations: [LoginContainerComponent, RegisterContainerComponent],
   imports: [CommonModule, LoginRoutingModule, ShareModule],
-  exports: [LoginContainerComponent, RegisterComponent],
+  exports: [LoginContainerComponent, RegisterContainerComponent],
   providers: [],
 })
 export class LoginModule { }

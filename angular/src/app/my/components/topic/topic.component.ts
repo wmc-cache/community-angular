@@ -22,7 +22,7 @@ export class TopicComponent implements OnInit {
 
   ngOnInit() {
     this._id = this.cookies.get("_id");
-    this.cards$ = this.http.get<MyTopic[]>(`http://101.37.119.148:3000/users/5e71ed676095f90cc049bc0c/followingTopics`)
+    this.cards$ = this.http.get<MyTopic[]>(`http://101.37.119.148:3000/users/${this._id}/followingTopics`)
   }
 
 }

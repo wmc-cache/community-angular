@@ -50,21 +50,8 @@
   cursor: pointer;
 }
 
-.attention {
-  grid-area: attention;
-  font-size: 0.8rem;
-  color: #ccc;
-  white-space: nowrap;
-}
-.discuss {
-  grid-area: discuss;
-  font-size: 0.8rem;
-  color: #ccc;
-  white-space: nowrap;
-}
-.browse {
-  grid-area: browse;
-  font-size: 0.8rem;
-  color: #ccc;
-  white-space: nowrap;
+app-back-button {
+  position: fixed;
+  top: 5rem;
+  left: 5rem;
 }

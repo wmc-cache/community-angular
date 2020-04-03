@@ -3,6 +3,7 @@
   width: 80%;
   height: 60%;
   background-color: skyblue;
+  resize: none;
 }
 .title {
   color: #108ee9;

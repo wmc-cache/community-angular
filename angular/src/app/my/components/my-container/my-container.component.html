@@ -4,6 +4,10 @@
     <span> >我的主页</span>
   </ng-container>
 
-  <app-tab-my (tabSelected)="link($event)"></app-tab-my>
+  <app-tab-my
+    [selectTabLink]="selectTabLink$ | async"
+    [menus]="menus$ | async"
+    (tabSelected)="link($event)"
+  ></app-tab-my>
   <router-outlet></router-outlet>
 </div>

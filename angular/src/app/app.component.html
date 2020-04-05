@@ -1,7 +1,12 @@
 <div class="container">
   <div class="title">Community</div>
 
-  <app-tab-home (tabSelected)="link($event)"> </app-tab-home>
+  <app-tab-home
+    [selectTabLink]="selectTabLink$ | async"
+    [menus]="menus$ | async"
+    (tabSelected)="link($event)"
+  >
+  </app-tab-home>
   <button (click)="question()">提问</button>
   <ng-container *ngIf="my$ | async as my">
     <div class="name" (click)="handleClick()">{{ my.name }}</div>

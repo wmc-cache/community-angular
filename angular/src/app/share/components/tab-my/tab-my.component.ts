@@ -10,6 +10,7 @@ import { Location } from "@angular/common";
 export class TabMyComponent implements OnInit {
 
   constructor(private location: Location, private cookies: CookieService) { }
+  @Input() selectTabLink: string
   @Input() menus: TopMenu[] = [{ id: 0, title: "问题", link: "my/question" }, { id: 1, title: "回答", link: "my/answer" }, { id: 2, title: "话题", link: "my/topic" }];
   @Input() margin = "0.5rem  2.5rem";
   @Output() tabSelected = new EventEmitter();
@@ -18,11 +19,13 @@ export class TabMyComponent implements OnInit {
 
   handSelect(index: number) {
     this.tabSelected.emit(this.menus[index]);
-    setTimeout(() => { location.reload() }, 100)
+    console.log(this.selectTabLink)
+
   }
   ngOnInit(): void {
+    console.log(this.selectTabLink)
 
-    this.select1 = this.cookies.get("select1")
+
 
   }
 

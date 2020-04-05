@@ -28,7 +28,7 @@ export class AnswerCardComponent implements OnInit {
 
 
   ngOnInit() {
-    this._id = this.cookies.get("_id");
+    console.log(this.card.questioner)
     this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this.card.questioner}`)
   }
 

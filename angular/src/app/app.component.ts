@@ -1,12 +1,19 @@
-import { Component, OnInit, SimpleChanges, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DialogMyComponent, DialogQuestionComponent } from './share';
 import { DialogService } from './dialog';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MyCard } from './my';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Location } from "@angular/common";
+import { map, filter } from 'rxjs/operators'
+export interface Tab {
+  filter(arg0: (ele: any) => boolean): any;
+  id: number,
+  title: string,
+  link: string
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,15 +21,16 @@ import { Location } from "@angular/common";
 })
 export class AppComponent implements OnInit {
 
-  constructor(private location: Location, private cookies: CookieService, private router: Router, private dialogService: DialogService, private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private location: Location, private cookies: CookieService, private router: Router, private dialogService: DialogService, private http: HttpClient, private route: ActivatedRoute) {
+
+  }
   time: number = 2 * 60 * 60 * 10000;
   my$: Observable<MyCard>
-  _id
-  select
-
+  _id: string
+  menus$: Observable<Tab>
+  selectTabLink$: Observable<string>
   link(menu) {
-    this.select = menu.id
-    this.cookies.set("select", this.select, new Date(new Date().getTime() + this.time), "/");
+
     this.router.navigate([menu.link])
   }
 
@@ -32,7 +40,14 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
+    this.selectTabLink$ = this.router.events.pipe(
+      filter(ev => ev instanceof NavigationEnd),
+      map((ev: NavigationEnd) => {
+        const arr = ev.url.split('/');
+        return arr.length > 0 ? arr[1] : "discover"
+      }))
 
+    this.menus$ = this.http.get<Tab>(`http://localhost:3000/tabs`).pipe(map(all => all.filter(ele => ele.id < 2)))
     this._id = this.cookies.get("_id");
     this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this._id}`)
   }

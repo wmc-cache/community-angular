@@ -14,6 +14,7 @@ export interface TopMenu {
 export class TabHomeComponent implements OnInit {
 
   constructor(private location: Location, private cookies: CookieService) { }
+  @Input() selectTabLink: string
   @Input() menus: TopMenu[] = [{ id: 0, title: "发现", link: "discover" }, { id: 1, title: "回答", link: "answer" }];
   @Input() margin = "0.5rem  2.5rem";
   @Output() tabSelected = new EventEmitter();
@@ -22,10 +23,12 @@ export class TabHomeComponent implements OnInit {
 
   handSelect(index: number) {
     this.tabSelected.emit(this.menus[index]);
-    setTimeout(() => { location.reload() }, 100)
+
+
+
   }
   ngOnInit(): void {
-    this.select = this.cookies.get("select")
+    console.log(this.selectTabLink)
   }
 
 }

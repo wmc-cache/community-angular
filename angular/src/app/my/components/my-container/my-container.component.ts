@@ -40,7 +40,7 @@ export class MyContainerComponent implements OnInit {
         return `${arr[1]}/${arr[2]}`
       }))
 
-    this.menus$ = this.http.get<Tab>(`http://localhost:3000/tabs`).pipe(map(all => all.filter(ele => ele.id >= 2)))
+    this.menus$ = this.http.get<Tab>(`http://101.37.119.148:3000/tabs`).pipe(map(all => all.filter(ele => ele.id >= 2)))
   }
 
 }

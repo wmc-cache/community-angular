@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
         return arr.length > 0 ? arr[1] : "discover"
       }))
 
-    this.menus$ = this.http.get<Tab>(`http://localhost:3000/tabs`).pipe(map(all => all.filter(ele => ele.id < 2)))
+    this.menus$ = this.http.get<Tab>(`http://101.37.119.148:3000/tabs`).pipe(map(all => all.filter(ele => ele.id < 2)))
     this._id = this.cookies.get("_id");
     this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this._id}`)
   }

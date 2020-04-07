@@ -19,7 +19,7 @@ export class AnswerContainerComponent implements OnInit {
   ngOnInit() {
     this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/questions`)
   }
-  change() {
+  change(event) {
     this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/questions?q=${this.value}`)
 
 

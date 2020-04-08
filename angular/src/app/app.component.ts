@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
       filter(ev => ev instanceof NavigationEnd),
       map((ev: NavigationEnd) => {
         const arr = ev.url.split('/');
-        return arr.length > 0 ? arr[1] : "discover"
+        return `${arr[1]}`
       }))
 
     this.menus$ = this.http.get<Tab>(`http://101.37.119.148:3000/tabs`).pipe(map(all => all.filter(ele => ele.id < 2)))

@@ -13,21 +13,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./my-container.component.css']
 })
 export class MyContainerComponent implements OnInit {
-  time: number = 2 * 60 * 60 * 10000;
-
-
   constructor(private http: HttpClient, private location: Location, private cookies: CookieService, private router: Router) { }
   menus$
   selectTabLink$: Observable<string>
 
   link(menu) {
-
     this.router.navigate([menu.link])
-
   }
-
-
-
   handleClick() {
     this.router.navigate(["/discover"])
 
@@ -36,7 +28,7 @@ export class MyContainerComponent implements OnInit {
     this.selectTabLink$ = this.router.events.pipe(
       filter(ev => ev instanceof NavigationEnd),
       map((ev: NavigationEnd) => {
-        const arr = ev.url.split('/');
+        const arr = ev.url.split("/");
         return `${arr[1]}/${arr[2]}`
       }))
 

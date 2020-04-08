@@ -3,7 +3,7 @@
   <div class="search">
     <input
       typo="text"
-      (keyup)="change($event)"
+      (input)="change($event)"
       [(ngModel)]="value"
       placeholder="搜索问题"
     />

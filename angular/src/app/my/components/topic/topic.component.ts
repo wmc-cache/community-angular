@@ -16,9 +16,12 @@ export interface MyCard {
 export class TopicComponent implements OnInit {
   constructor(private cookies: CookieService, private http: HttpClient) { }
   cards$: Observable<MyTopic[]>
-  _id
+  _id: string
 
-
+  change() {
+    this._id = this.cookies.get("_id");
+    this.cards$ = this.http.get<MyTopic[]>(`http://101.37.119.148:3000/users/${this._id}/followingTopics`)
+  }
 
   ngOnInit() {
     this._id = this.cookies.get("_id");

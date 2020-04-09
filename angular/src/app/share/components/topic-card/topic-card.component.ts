@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
@@ -13,13 +13,25 @@ export interface TopicCard {
   templateUrl: './topic-card.component.html',
   styleUrls: ['./topic-card.component.css']
 })
-export class TopicCardComponent implements OnInit {
+export class TopicCardComponent implements OnInit, AfterContentInit {
   @Input() card: TopicCard
   constructor(private cookies: CookieService, private http: HttpClient, private router: Router) { }
   token
-
+  arr
+  _id
+  idArr = []
+  isCollect: boolean
   ngOnInit() {
+    this._id = this.cookies.get("_id");
+    this.http.get(`http://101.37.119.148:3000/users/${this._id}/followingTopics`).subscribe(res => {
+      this.arr = res, this.arr.forEach(ele => {
+        this.idArr.push(ele._id)
 
+      }), this.idArr.includes(this.card._id) ? this.isCollect = false : this.isCollect = true
+    })
+
+  }
+  ngAfterContentInit() {
 
   }
 
@@ -28,11 +40,11 @@ export class TopicCardComponent implements OnInit {
   }
 
   handleClick() {
+    this.isCollect = false
     this.token = this.cookies.get("token");
-    console.log(this.token)
     let url = `http://101.37.119.148:3000/users/followingTopics/${this.card._id}`
     let headerOption = { headers: new HttpHeaders({ "Content-Type": 'application/json', "Authorization": `bearer ${this.token}` }) }
-    this.http.put(url, {}, headerOption).subscribe(res => { console.log(res) })
+    this.http.put(url, {}, headerOption).subscribe()
   }
 }
 

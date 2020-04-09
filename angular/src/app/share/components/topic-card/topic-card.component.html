@@ -3,5 +3,16 @@
   <div class="title">{{ card.name }}</div>
   <div class="introduction">{{ card.introduction }}</div>
 
-  <button (click)="handleClick()" class="button">关注话题</button>
+  <button *ngIf="isCollect" (click)="handleClick()" class="button">
+    关注话题
+  </button>
+  <button
+    disabled="false"
+    style="opacity: 0.3;"
+    *ngIf="!isCollect"
+    (click)="handleClick()"
+    class="button"
+  >
+    已关注
+  </button>
 </div>

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="title">我关注的话题</div>
   <app-my-topic
+    (change)="change()"
     *ngFor="let card of cards$ | async"
     [card]="card"
   ></app-my-topic>

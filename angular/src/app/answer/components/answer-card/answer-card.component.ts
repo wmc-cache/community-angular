@@ -4,6 +4,7 @@ import { MyCard } from 'src/app/my';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 export interface QuestionCard {
   _id: string,
   questioner: string,
@@ -21,14 +22,17 @@ export class AnswerCardComponent implements OnInit {
   constructor(private cookies: CookieService, private http: HttpClient, private router: Router) { }
   my$: Observable<MyCard>
   at: string
-  _id
+  _id: string
+
   handleClick() {
     this.router.navigate(["/answer/detail"], { queryParams: { _id: `${this.card._id}` } })
+
   }
 
 
   ngOnInit() {
-    console.log(this.card.questioner)
+    this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this.card.questioner}`)
+
     this.my$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this.card.questioner}`)
   }
 

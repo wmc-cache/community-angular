@@ -54,7 +54,7 @@ export class AnswerContentComponent implements OnInit, AfterContentInit {
   collect() {
 
 
-    console.log(this.collecting)
+
 
 
 
@@ -72,13 +72,6 @@ export class AnswerContentComponent implements OnInit, AfterContentInit {
   ngOnInit() {
 
 
-    this._id = this.cookies.get("_id");
-    this.list$ = this.http.get<MyAnswer[]>(`http://101.37.119.148:3000/users/${this._id}/collectingAnswers`)
-      .pipe(map(all => all.filter(ele => ele._id === this.card._id)))
-
-    this.list$.forEach(element => {
-      this.arr.push(element)
-    });
 
 
 
@@ -86,6 +79,6 @@ export class AnswerContentComponent implements OnInit, AfterContentInit {
   }
   ngAfterContentInit(): void {
 
-    console.log(this.arr)
+
   }
 }

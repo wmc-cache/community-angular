@@ -25,11 +25,11 @@ export class TabMyComponent implements OnInit {
   }
   ngOnInit(): void {
     console.log(this.selectTabLink)
-    // if (this.selectTabLink == null) {
-    //   this.router.navigate(["my/question"])
-    //   this.selectTabLink = "my/question"
+    if (this.selectTabLink == null) {
+      this.router.navigate(["my/question"])
+      this.selectTabLink = "my/question"
 
-    // }
+    }
 
 
 

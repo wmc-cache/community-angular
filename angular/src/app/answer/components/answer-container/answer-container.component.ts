@@ -11,18 +11,11 @@ import { HttpClient } from '@angular/common/http';
 export class AnswerContainerComponent implements OnInit {
   cards$: Observable<QuestionCard[]>
   constructor(private http: HttpClient) { }
-  value = ""
-  handleClick() {
-    this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/questions`)
-    this.value = ""
-  }
+
+
   ngOnInit() {
     this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/questions`)
   }
-  change(event) {
-    this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/questions?q=${this.value}`)
 
-
-  }
 
 }

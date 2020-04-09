@@ -9,36 +9,3 @@
   font-size: 2rem;
   border-bottom: 1px solid darkgrey;
 }
-input {
-  box-sizing: border-box;
-  width: 20rem;
-  height: 2rem;
-  border: 1px solid darkgray;
-  font-size: 0.8rem;
-  padding-left: 1.5rem;
-  background: #fff;
-  border-radius: 0.2rem;
-  min-width: 7rem;
-  margin: 1rem auto;
-}
-button {
-  display: block;
-  width: 5rem;
-  margin: 1rem auto;
-  padding: 0.5rem 0;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  font-size: 0.7rem;
-  text-align: center;
-  color: #fff;
-  border-radius: 5px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  user-select: none;
-  background-color: #108ee9;
-  cursor: pointer;
-}
-.search {
-  display: flex;
-}

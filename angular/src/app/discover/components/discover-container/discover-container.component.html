@@ -1,6 +1,13 @@
 <div class="page">
   <div class="title">热门话题</div>
-
+  <div class="search">
+    <input
+      (input)="change($event)"
+      [(ngModel)]="value"
+      typo="text"
+      placeholder="搜索话题"
+    />
+  </div>
   <app-vertical-grid [itemWidth]="'18rem'" [itemHeight]="'0rem'">
     <app-topic-card
       *ngFor="let card of cards$ | async"

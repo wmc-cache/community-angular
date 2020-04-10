@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { QuestionCard } from '../answer-card';
 import { HttpClient } from '@angular/common/http';
+import { tap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-answer-container',
@@ -14,7 +15,7 @@ export class AnswerContainerComponent implements OnInit {
 
 
   ngOnInit() {
-    this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/questions`)
+    this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/questions`).pipe(map(arr => arr.reverse()))
   }
 
 

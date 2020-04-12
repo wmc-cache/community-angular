@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookiesService } from '../..';
 
+
+
 @Component({
   selector: 'app-dialog-question',
   templateUrl: './dialog-question.component.html',

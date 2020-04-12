@@ -1,9 +1,8 @@
-import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MyCard } from 'src/app/my';
 import { Observable } from 'rxjs';
 import { CookiesService } from 'src/app/share';
-
 
 export interface ContentCard {
   _id: string

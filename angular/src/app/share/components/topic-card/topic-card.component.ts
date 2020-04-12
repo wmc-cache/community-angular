@@ -2,6 +2,7 @@ import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { CookiesService } from '../..';
+
 export interface TopicCard {
   name: string,
   avatar_url: string,

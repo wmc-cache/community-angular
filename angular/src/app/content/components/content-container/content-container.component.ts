@@ -20,7 +20,6 @@ export class ContentContainerComponent implements OnInit {
   ngOnInit() {
 
     this.route.queryParamMap.subscribe(params => { this._id = params.get('_id') })
-
     this.card$ = this.http.get<TopicCard>(`http://101.37.119.148:3000/topics/${this._id}`)
     this.cards$ = this.http.get<QuestionCard[]>(`http://101.37.119.148:3000/topics/${this._id}/questions`)
   }

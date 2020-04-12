@@ -6,9 +6,6 @@ import { MyContainerComponent, TopicComponent, AnswerComponent, QuestionComponen
 const routes: Routes = [
   {
     path: 'my', component: MyContainerComponent,
-
-
-
     children: [
       { path: "", redirectTo: "question", pathMatch: "full" },
       {

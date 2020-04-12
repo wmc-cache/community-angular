@@ -28,8 +28,6 @@ export class AnswerCardComponent implements OnInit {
     this.router.navigate(["/answer/detail"], { queryParams: { _id: `${this.card._id}` } })
 
   }
-
-
   ngOnInit() {
     this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this.card.questioner}`)
 

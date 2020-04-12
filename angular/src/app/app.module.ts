@@ -16,14 +16,14 @@ import { DiscoverModule } from './discover'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     DiscoverModule,
     ShareModule,
     MyModule,
     HttpClientModule,
     LoginModule,
     ContentModule,
-    AnswerModule
+    AnswerModule,
+    AppRoutingModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],

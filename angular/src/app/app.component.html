@@ -10,6 +10,7 @@
   <button (click)="question()">提问</button>
   <ng-container *ngIf="my$ | async as my">
     <div class="name" (click)="handleClick()">{{ my.name }}</div>
+    <div class="name" routerLink="./login" *ngIf="my.name == null">请登录</div>
   </ng-container>
 </div>
 

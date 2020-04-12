@@ -1,10 +1,10 @@
 .push {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
   grid-template-rows: 2rem 6rem 6rem 2rem;
   grid-gap: 5px;
   grid-template-areas:
-    " input input input input "
+    " . input input . "
     "textarea textarea textarea  textarea "
     "textarea textarea textarea textarea "
     ". button   button .";
@@ -38,7 +38,7 @@ input {
   padding-left: 1.5rem;
   background: #fff;
   border-radius: 0.2rem;
-  width: 25rem;
+
   margin: 1px auto;
 }
 

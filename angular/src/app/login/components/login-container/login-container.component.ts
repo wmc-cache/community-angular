@@ -36,7 +36,7 @@ export class LoginContainerComponent implements OnInit {
         this.cookies.set("_id", _id, new Date(new Date().getTime() + this.time), "./");
         this.cookies.set("token", token, new Date(new Date().getTime() + this.time), "./");
         this.router.navigate(['/discover']);
-        setTimeout(() => { location.reload() }, 1)
+        setTimeout(() => { location.reload() }, 100)
 
 
 

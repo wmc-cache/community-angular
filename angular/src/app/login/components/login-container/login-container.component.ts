@@ -15,7 +15,7 @@ export class LoginContainerComponent implements OnInit {
   constructor(private location: Location, private cookies: CookieService, private http: HttpClient, private router: Router) { }
 
 
-  model = new User("吴梦成", "wmc");
+  model = new User("", "");
 
 
 

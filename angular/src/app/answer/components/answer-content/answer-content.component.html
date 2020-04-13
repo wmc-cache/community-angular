@@ -16,9 +16,17 @@
     alt=""
   />
   <img
+    *ngIf="isCollect"
     (click)="collect()"
     class="collect"
     src="../../../../assets/icons/收 藏 (1).png"
+    alt=""
+  />
+  <img
+    *ngIf="!isCollect"
+    (click)="collect()"
+    class="collect"
+    src="../../../../assets/icons/收 藏 (成功).png"
     alt=""
   />
 

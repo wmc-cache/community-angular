@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MyCard } from 'src/app/my';
 import { Observable } from 'rxjs';
 import { CookiesService } from 'src/app/share';
+import { tap } from 'rxjs/operators';
 
 export interface ContentCard {
   _id: string
@@ -18,6 +19,9 @@ export interface ContentCard {
 export class AnswerContentComponent implements OnInit {
   @Input() card: ContentCard
   @Input() name$: Observable<MyCard>
+  arr
+  idArr = []
+  isCollect
   constructor(private http: HttpClient, private cookies: CookiesService) { }
   like() {
     let url = `http://101.37.119.148:3000/users/likingAnswers/${this.card._id}`
@@ -53,6 +57,12 @@ export class AnswerContentComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.http.get(`http://101.37.119.148:3000/users/${this.cookies._id}/collectingAnswers`).subscribe(res => {
+      this.arr = res, this.arr.forEach(ele => {
+        this.idArr.push(ele._id)
+
+      }), this.idArr.includes(this.card._id) ? this.isCollect = false : this.isCollect = true
+    })
     this.name$ = this.http.get<MyCard>(`http://101.37.119.148:3000/users/${this.card.answerer}`)
   }
 

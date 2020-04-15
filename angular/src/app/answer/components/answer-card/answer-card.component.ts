@@ -19,7 +19,6 @@ export class AnswerCardComponent implements OnInit {
   @Input() card: QuestionCard
   constructor(private http: HttpClient, private router: Router) { }
   my$: Observable<MyCard>
-  at: string
   _id: string
 
   handleClick() {

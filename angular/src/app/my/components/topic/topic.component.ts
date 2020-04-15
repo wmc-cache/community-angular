@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
-import { MyTopic } from 'src/app/share';
+import { MyTopic, CookiesService } from 'src/app/share';
 export interface MyCard {
   name: string,
   avatar_url: string,
@@ -14,18 +13,15 @@ export interface MyCard {
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
-  constructor(private cookies: CookieService, private http: HttpClient) { }
+  constructor(private cookies: CookiesService, private http: HttpClient) { }
   cards$: Observable<MyTopic[]>
   _id: string
-
   change() {
-    this._id = this.cookies.get("_id");
-    this.cards$ = this.http.get<MyTopic[]>(`http://101.37.119.148:3000/users/${this._id}/followingTopics`)
+    this.cards$ = this.http.get<MyTopic[]>(`http://101.37.119.148:3000/users/${this.cookies._id}/followingTopics`)
   }
 
   ngOnInit() {
-    this._id = this.cookies.get("_id");
-    this.cards$ = this.http.get<MyTopic[]>(`http://101.37.119.148:3000/users/${this._id}/followingTopics`)
+    this.cards$ = this.http.get<MyTopic[]>(`http://101.37.119.148:3000/users/${this.cookies._id}/followingTopics`)
   }
 
 }

@@ -13,7 +13,7 @@ import { QuestionCard } from 'src/app/answer';
 })
 export class ContentContainerComponent implements OnInit {
   card$: Observable<TopicCard>
-  _id
+  _id: string
   cards$: Observable<QuestionCard[]>
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
 

@@ -11,7 +11,7 @@ import { User } from '../user'
 })
 export class LoginContainerComponent implements OnInit {
   time: number = 2 * 60 * 60 * 1000;
-  val
+  val: any
   constructor(private location: Location, private cookies: CookieService, private http: HttpClient, private router: Router) { }
 
 
@@ -37,9 +37,6 @@ export class LoginContainerComponent implements OnInit {
         this.cookies.set("token", token, new Date(new Date().getTime() + this.time), "./");
         this.router.navigate(['/discover']);
         setTimeout(() => { location.reload() }, 100)
-
-
-
       }
 
     })

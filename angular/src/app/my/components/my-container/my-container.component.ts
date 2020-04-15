@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class MyContainerComponent implements OnInit {
   constructor(private http: HttpClient, private location: Location, private cookies: CookieService, private router: Router) { }
-  menus$
+  menus$: Observable<Tab>
   selectTabLink$: Observable<string>
 
   link(menu) {

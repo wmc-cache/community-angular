@@ -5,11 +5,8 @@ import { CookieService } from 'ngx-cookie-service';
 export class CookiesService {
 
   constructor(private cookies: CookieService) { }
-
-
   get token() {
     return this.cookies.get("token")
-
   }
 
   get _id() {

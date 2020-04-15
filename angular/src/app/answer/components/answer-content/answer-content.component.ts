@@ -3,8 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MyCard } from 'src/app/my';
 import { Observable } from 'rxjs';
 import { CookiesService } from 'src/app/share';
-import { tap } from 'rxjs/operators';
-
 export interface ContentCard {
   _id: string
   content: string,
@@ -19,9 +17,9 @@ export interface ContentCard {
 export class AnswerContentComponent implements OnInit {
   @Input() card: ContentCard
   @Input() name$: Observable<MyCard>
-  arr
+  arr: any
   idArr = []
-  isCollect
+  isCollect: boolean
   constructor(private http: HttpClient, private cookies: CookiesService) { }
   like() {
     let url = `http://101.37.119.148:3000/users/likingAnswers/${this.card._id}`
@@ -31,7 +29,7 @@ export class AnswerContentComponent implements OnInit {
       })
     }
     this.http.put(url, {}, headerOption).subscribe((res) => { console.log(res) })
-    setTimeout(() => { location.reload() }, 1000)
+    setTimeout(() => { location.reload() }, 500)
   }
 
   dislike() {
@@ -42,7 +40,7 @@ export class AnswerContentComponent implements OnInit {
       })
     }
     this.http.put(url, {}, headerOption).subscribe((res) => { console.log(res) })
-    setTimeout(() => { location.reload() }, 1000)
+    setTimeout(() => { location.reload() }, 500)
   }
 
   collect() {
@@ -53,7 +51,7 @@ export class AnswerContentComponent implements OnInit {
       })
     }
     this.http.put(url, {}, headerOption).subscribe((res) => { })
-    setTimeout(() => { location.reload() }, 1000)
+    setTimeout(() => { location.reload() }, 500)
   }
 
   ngOnInit() {

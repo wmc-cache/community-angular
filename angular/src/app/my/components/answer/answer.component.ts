@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { MyAnswer } from 'src/app/share';
+import { Component, OnInit } from '@angular/core';
+import { MyAnswer, CookiesService } from 'src/app/share';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
+
 
 @Component({
   selector: 'app-answer',
@@ -11,11 +11,11 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AnswerComponent implements OnInit {
   cards$: Observable<MyAnswer[]>
-  constructor(private http: HttpClient, private cookies: CookieService) { }
-  _id
+  constructor(private http: HttpClient, private cookies: CookiesService) { }
+
   ngOnInit() {
-    this._id = this.cookies.get("_id");
-    this.cards$ = this.http.get<MyAnswer[]>(`http://101.37.119.148:3000/users/${this._id}/collectingAnswers`)
+
+    this.cards$ = this.http.get<MyAnswer[]>(`http://101.37.119.148:3000/users/${this.cookies._id}/collectingAnswers`)
   }
 
 }

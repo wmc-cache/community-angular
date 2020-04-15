@@ -1,6 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
-import { Location } from "@angular/common";
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 export interface TopMenu {
   id: number;
   title: string;
@@ -11,9 +9,9 @@ export interface TopMenu {
   templateUrl: './tab-home.component.html',
   styleUrls: ['./tab-home.component.css']
 })
-export class TabHomeComponent implements OnInit {
+export class TabHomeComponent {
 
-  constructor(private location: Location, private cookies: CookieService) { }
+  constructor() { }
   @Input() selectTabLink: string
   @Input() menus: TopMenu[] = [{ id: 0, title: "发现", link: "discover" }, { id: 1, title: "回答", link: "answer" }];
   @Input() margin = "0.5rem  2.5rem";
@@ -24,8 +22,6 @@ export class TabHomeComponent implements OnInit {
 
 
   }
-  ngOnInit(): void {
-    console.log(this.selectTabLink)
-  }
+
 
 }

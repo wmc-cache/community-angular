@@ -29,7 +29,5 @@ export class ParticularsCardComponent implements OnInit {
 
 
   ngOnInit() {
-
-
   }
 }

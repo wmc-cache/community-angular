@@ -1,7 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
-import { Location } from "@angular/common";
 import { CookiesService } from '../..';
 export interface MyTopic {
   _id: string,

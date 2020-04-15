@@ -1,8 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
-import { Location } from '@angular/common'
 import { CookiesService } from '../..';
 export interface MyAnswer {
   _id: string

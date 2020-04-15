@@ -20,9 +20,7 @@ export interface Tab {
 export class AppComponent implements OnInit {
 
   constructor(private cookies: CookiesService, private router: Router, private dialogService: DialogService, private http: HttpClient, private route: ActivatedRoute) {
-
   }
-  time: number = 2 * 60 * 60 * 10000;
   my$: Observable<MyCard>
   menus$: Observable<Tab>
   selectTabLink$: Observable<string>

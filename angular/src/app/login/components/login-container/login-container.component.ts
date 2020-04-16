@@ -13,15 +13,9 @@ export class LoginContainerComponent implements OnInit {
   time: number = 2 * 60 * 60 * 1000;
   val: any
   constructor(private location: Location, private cookies: CookieService, private http: HttpClient, private router: Router) { }
-
-
   model = new User("", "");
-
-
-
   newHero() {
     this.model = new User("", "");
-
   }
   get user() { return JSON.stringify(this.model); }
 
@@ -43,13 +37,9 @@ export class LoginContainerComponent implements OnInit {
 
 
   }
-
   navigate() {
     this.router.navigate(['/register'])
   }
-
-
-
   ngOnInit() {
   }
 }

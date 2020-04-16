@@ -8,17 +8,14 @@
   z-index: 5000;
   background-color: skyblue;
 }
-
 .container {
   max-width: 40rem;
   margin: 10rem auto;
 }
-
 form {
   display: grid;
   grid-template-columns: 0.7fr 1fr 1fr 1fr;
   grid-template-rows: 5.5rem 2rem 2.5rem 1rem 2rem 2.5rem 3.5rem 3.5rem;
-
   grid-template-areas:
     ". h1 h1 ."
     "label1 input1 input1 ."
